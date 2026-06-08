@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>221 — Numéro d'Urgence National Unique · Sénégal</title>
+<meta name="description" content="Signez la pétition pour un numéro d'urgence unique au Sénégal. Une vie peut tenir à un chiffre.">
+<meta property="og:title" content="221 — Le Sénégal mérite un numéro d'urgence unique">
+<meta property="og:description" content="Police. Pompiers. SAMU. Un seul numéro. 221.">
+<meta name="theme-color" content="#006633">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --vert: #006633;
+  --rouge: #CC0000;
+  --or: #B8860B;
+  --blanc: #F8F6F1;
+  --noir: #0D0D0D;
+  --gris: #6B6B6B;
+  --gris-clair: #E8E5DE;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--blanc);
+  color: var(--noir);
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 40px;
+  background: rgba(248,246,241,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gris-clair);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px; color: var(--vert); letter-spacing: 2px;
+}
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: var(--gris);
+  text-decoration: none; letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--vert); }
+.nav-cta {
+  background: var(--rouge); color: #fff !important;
+  padding: 9px 20px; border-radius: 6px;
+  font-weight: 600 !important;
+}
+.nav-cta:hover { background: #a80000 !important; color: #fff !important; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 120px 40px 80px;
+  position: relative; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--vert) 0%, #003d1f 60%, #001a0d 100%);
+}
+.hero-texture {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(184,134,11,0.08) 0%, transparent 40%);
+}
+.hero-flag {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 6px;
+  background: linear-gradient(180deg, #006633 33.3%, #FDEF42 33.3%, #FDEF42 66.6%, #CC0000 66.6%);
+  opacity: 0.6;
+}
+.hero-content { position: relative; z-index: 2; max-width: 900px; }
+
+.hero-eyebrow {
+  font-size: 12px; font-weight: 600; letter-spacing: 3px;
+  color: rgba(255,255,255,0.5); text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s ease both;
+}
+.hero-221 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(120px, 20vw, 220px);
+  line-height: 0.85;
+  color: #fff;
+  letter-spacing: -2px;
+  animation: fadeUp 0.8s ease 0.1s both;
+}
+.hero-221 span { color: var(--or); }
+.hero-tagline {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(22px, 3.5vw, 38px);
+  color: rgba(255,255,255,0.88);
+  line-height: 1.3;
+  margin: 28px 0 40px;
+  font-style: italic;
+  animation: fadeUp 0.8s ease 0.2s both;
+}
+.hero-stats {
+  display: flex; gap: 48px; flex-wrap: wrap;
+  animation: fadeUp 0.8s ease 0.3s both;
+}
+.stat { border-left: 2px solid rgba(255,255,255,0.2); padding-left: 20px; }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px; color: #fff; letter-spacing: 1px;
+}
+.stat-lbl { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 0.5px; }
+
+.hero-scroll {
+  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: bounce 2s infinite;
+}
+.hero-scroll span { font-size: 10px; letter-spacing: 2px; color: rgba(255,255,255,0.4); }
+.hero-scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+}
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+/* SECTION générique */
+section { padding: 100px 40px; }
+.section-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--vert);
+  margin-bottom: 20px; display: block;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 6vw, 80px);
+  line-height: 0.95; letter-spacing: 1px;
+  margin-bottom: 32px;
+}
+.section-body {
+  font-size: 17px; line-height: 1.75; color: var(--gris);
+  max-width: 640px;
+}
+
+/* DRAME */
+.drame {
+  background: var(--noir); color: var(--blanc);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: center;
+}
+.drame .section-title { color: var(--blanc); }
+.drame .section-body { color: rgba(248,246,241,0.65); }
+.drame-quote {
+  border-left: 4px solid var(--rouge);
+  padding-left: 32px; padding-top: 8px; padding-bottom: 8px;
+}
+.drame-quote p {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  line-height: 1.45; color: var(--blanc); font-style: italic;
+}
+.drame-quote cite {
+  display: block; margin-top: 20px;
+  font-size: 12px; color: rgba(248,246,241,0.4);
+  letter-spacing: 1px; font-style: normal; text-transform: uppercase;
+}
+
+/* PROBLEME */
+.probleme { background: var(--blanc); }
+.numeros-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+  margin-top: 60px; border: 2px solid var(--noir);
+}
+.numero-card {
+  padding: 40px 32px; border-right: 2px solid var(--noir);
+  position: relative;
+}
+.numero-card:last-child { border-right: none; }
+.numero-card.dead { background: #f5f5f5; }
+.numero-big {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 88px; line-height: 1; letter-spacing: 2px;
+  color: var(--noir); margin-bottom: 16px;
+}
+.numero-card.dead .numero-big { color: #bbb; }
+.numero-name { font-size: 13px; font-weight: 600; color: var(--gris); margin-bottom: 12px; letter-spacing: 0.5px; }
+.numero-issues { list-style: none; }
+.numero-issues li {
+  font-size: 13px; color: var(--gris); padding: 6px 0;
+  border-top: 1px solid var(--gris-clair);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.numero-issues li::before { content: '—'; color: var(--rouge); flex-shrink: 0; }
+.vs-arrow {
+  text-align: center; padding: 60px 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 60px; color: var(--vert);
+  border-right: 2px solid var(--noir);
+}
+.solution-card { background: var(--vert); }
+.solution-card .numero-big { color: #fff; }
+.solution-card .numero-name { color: rgba(255,255,255,0.6); }
+.solution-card .numero-issues li { color: rgba(255,255,255,0.8); border-top-color: rgba(255,255,255,0.15); }
+.solution-card .numero-issues li::before { color: var(--or); }
+
+/* COMMENT ÇA MARCHE */
+.comment { background: var(--gris-clair); }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 60px; }
+.step { position: relative; }
+.step-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px; color: var(--vert); opacity: 0.15;
+  line-height: 1; margin-bottom: 16px;
+}
+.step-icon { font-size: 32px; margin-bottom: 16px; }
+.step h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+.step p { font-size: 14px; line-height: 1.6; color: var(--gris); }
+.step-connector {
+  position: absolute; top: 36px; right: -16px;
+  width: 32px; height: 2px; background: var(--vert); opacity: 0.3;
+}
+
+/* PETITION */
+.petition { background: var(--vert); color: var(--blanc); }
+.petition .section-label { color: rgba(255,255,255,0.5); }
+.petition .section-title { color: #fff; }
+.petition-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+}
+.petition-text .section-body { color: rgba(255,255,255,0.7); }
+.petition-count-wrap { margin: 32px 0; }
+.petition-count {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 100px; color: #fff; line-height: 1;
+  letter-spacing: 2px;
+}
+.petition-count span { color: var(--or); }
+.petition-goal {
+  font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 6px; letter-spacing: 0.5px;
+}
+.progress-bar {
+  height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px;
+  margin-top: 16px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; background: var(--or); border-radius: 2px;
+  width: 3%; transition: width 1s ease;
+}
+
+.form-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px; padding: 40px;
+  backdrop-filter: blur(8px);
+}
+.form-card h3 {
+  font-size: 20px; font-weight: 600; color: #fff;
+  margin-bottom: 6px;
+}
+.form-card p { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+.form-group { margin-bottom: 16px; }
+.form-group input, .form-group select {
+  width: 100%; padding: 14px 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px; color: #fff; font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  outline: none; transition: border-color 0.2s;
+}
+.form-group input::placeholder { color: rgba(255,255,255,0.35); }
+.form-group input:focus, .form-group select:focus {
+  border-color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.12);
+}
+.form-group select option { background: var(--vert); color: #fff; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.btn-signer {
+  width: 100%; padding: 18px;
+  background: var(--rouge); color: #fff; border: none;
+  border-radius: 8px; font-size: 16px; font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-top: 20px; letter-spacing: 0.5px;
+}
+.btn-signer:hover { background: #a80000; transform: translateY(-1px); }
+.form-privacy {
+  font-size: 11px; color: rgba(255,255,255,0.3);
+  text-align: center; margin-top: 14px; line-height: 1.5;
+}
+.signataires-recents { margin-top: 28px; }
+.signataires-recents h4 {
+  font-size: 11px; font-weight: 600; letter-spacing: 2px;
+  color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 14px;
+}
+.signataire-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.signataire-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0;
+}
+.signataire-info { flex: 1; }
+.signataire-name { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.85); }
+.signataire-loc { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 1px; }
+.signataire-time { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+/* SUCCES */
+.success-msg {
+  display: none; text-align: center; padding: 32px 20px;
+}
+.success-msg .check {
+  font-size: 56px; margin-bottom: 16px;
+}
+.success-msg h3 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.success-msg p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.share-btns { display: flex; gap: 10px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
+.share-btn {
+  padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 600;
+  cursor: pointer; border: none; font-family: 'DM Sans', sans-serif;
+  display: flex; align-items: center; gap: 6px; transition: opacity 0.2s;
+}
+.share-btn:hover { opacity: 0.85; }
+.share-wa { background: #25D366; color: #fff; }
+.share-tw { background: #000; color: #fff; }
+.share-fb { background: #1877F2; color: #fff; }
+.share-cp { background: rgba(255,255,255,0.15); color: #fff; }
+
+/* APP */
+.app-section {
+  background: var(--noir); color: var(--blanc);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.app-section .section-title { color: var(--blanc); }
+.app-section .section-body { color: rgba(248,246,241,0.6); margin-bottom: 36px; }
+.app-features { list-style: none; margin-bottom: 40px; }
+.app-features li {
+  padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; gap: 14px;
+  font-size: 15px; color: rgba(255,255,255,0.75);
+}
+.app-features li .feat-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.btn-app {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 28px; background: var(--vert);
+  color: #fff; text-decoration: none; border-radius: 8px;
+  font-size: 15px; font-weight: 600; transition: all 0.2s;
+}
+.btn-app:hover { background: #004d25; transform: translateY(-2px); }
+.app-mockup {
+  display: flex; justify-content: center; align-items: center;
+}
+.phone-frame {
+  width: 220px; height: 440px; border-radius: 32px;
+  border: 8px solid rgba(255,255,255,0.12);
+  background: linear-gradient(145deg, #0a2915 0%, #001a09 100%);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; position: relative; overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}
+.phone-notch {
+  position: absolute; top: 12px;
+  width: 80px; height: 24px; background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+}
+.phone-221 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px; color: rgba(255,255,255,0.15); letter-spacing: 4px;
+}
+.phone-sos {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: var(--rouge); border: 4px solid rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px; box-shadow: 0 0 0 12px rgba(204,0,0,0.12);
+  animation: sosPulse 2s infinite;
+}
+@keyframes sosPulse {
+  0%,100%{box-shadow:0 0 0 12px rgba(204,0,0,0.12)}
+  50%{box-shadow:0 0 0 20px rgba(204,0,0,0)}
+}
+.phone-label {
+  font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.3);
+  letter-spacing: 2px; margin-top: 12px; text-transform: uppercase;
+}
+
+/* SOUTIENS */
+.soutiens { background: var(--blanc); }
+.soutiens-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px;
+}
+.soutien-card {
+  padding: 32px; border: 1px solid var(--gris-clair);
+  border-radius: 12px; transition: border-color 0.2s, transform 0.2s;
+}
+.soutien-card:hover { border-color: var(--vert); transform: translateY(-4px); }
+.soutien-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px; color: var(--vert); margin-bottom: 12px;
+}
+.soutien-org { font-size: 13px; font-weight: 600; color: var(--noir); margin-bottom: 8px; }
+.soutien-detail { font-size: 13px; color: var(--gris); line-height: 1.5; }
+.soutien-badge {
+  display: inline-block; margin-top: 12px;
+  padding: 4px 10px; background: #E8F5EE;
+  border-radius: 20px; font-size: 11px; font-weight: 600; color: var(--vert);
+}
+
+/* CONTACT */
+.contact {
+  background: var(--gris-clair);
+  text-align: center; padding: 80px 40px;
+}
+.contact .section-body { margin: 0 auto 40px; text-align: center; }
+.contact-cards {
+  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 48px;
+}
+.contact-card {
+  background: var(--blanc); border-radius: 12px; padding: 32px 40px;
+  border: 1px solid var(--gris-clair); text-align: center; min-width: 220px;
+}
+.contact-card .ico { font-size: 32px; margin-bottom: 12px; }
+.contact-card h4 { font-size: 13px; font-weight: 600; color: var(--gris); margin-bottom: 6px; letter-spacing: 0.5px; }
+.contact-card p { font-size: 15px; font-weight: 600; color: var(--noir); }
+
+/* FOOTER */
+footer {
+  background: var(--noir); padding: 48px 40px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;
+}
+.footer-221 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px; color: rgba(255,255,255,0.08); letter-spacing: 4px;
+}
+.footer-text { font-size: 13px; color: rgba(255,255,255,0.3); line-height: 1.6; }
+.footer-flag { font-size: 28px; }
+
+/* TOAST */
+.toast {
+  position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(100px);
+  background: var(--vert); color: #fff;
+  padding: 14px 24px; border-radius: 8px; font-size: 14px; font-weight: 500;
+  z-index: 999; transition: transform 0.4s ease; white-space: nowrap;
+  display: flex; align-items: center; gap: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  section { padding: 72px 20px; }
+  .hero { padding: 100px 20px 60px; }
+  .hero-stats { gap: 28px; }
+  .drame, .app-section, .petition-inner { grid-template-columns: 1fr; gap: 48px; }
+  .numeros-grid { grid-template-columns: 1fr; }
+  .numero-card { border-right: none; border-bottom: 2px solid var(--noir); }
+  .vs-arrow { border-right: none; border-bottom: 2px solid var(--noir); padding: 20px; font-size: 40px; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .step-connector { display: none; }
+  .soutiens-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; text-align: center; }
+  .form-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">221 🇸🇳</div>
+  <div class="nav-links">
+    <a href="#probleme">Le problème</a>
+    <a href="#comment">Comment ça marche</a>
+    <a href="#app">Application</a>
+    <a href="#soutiens">Soutiens</a>
+    <a href="#petition" class="nav-cta">Signer la pétition</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-flag"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">🇸🇳 République du Sénégal — Initiative citoyenne</span>
+    <div class="hero-221">221<span>.</span></div>
+    <p class="hero-tagline">Une vie peut tenir à un seul chiffre.<br>Le Sénégal mérite un numéro d'urgence unique.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">23M</div>
+        <div class="stat-lbl">abonnés mobiles</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-lbl">numéros fragmentés</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-lbl">coordination centralisée</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>DÉFILER</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- LE DRAME -->
+<section class="drame" id="drame">
+  <div>
+    <span class="section-label">L'origine du projet</span>
+    <h2 class="section-title" style="color:#fff">Ce que<br>cette nuit<br>a coûté.</h2>
+    <p class="section-body">Une enfant de 12 ans. Encore vivante au moment où son frère la découvre. Il compose le 17 — pas de réponse. Le 18. Le 1515. Les premiers hôpitaux refusent de la recevoir. Elle rend son dernier souffle sur la route du troisième établissement.</p>
+    <p class="section-body" style="margin-top:16px">Ce drame aurait pu être évité. Un numéro unique. Un opérateur. Un dispatch. Des secours envoyés en moins de 3 minutes.</p>
+  </div>
+  <div class="drame-quote">
+    <p>« Ce soir-là, mon ami ne savait pas quoi composer. Personne ne le sait vraiment. C'est pour ça que 221 doit exister. »</p>
+    <cite>— Amadou Abdou Thiaw, porteur du projet</cite>
+  </div>
+</section>
+
+<!-- LE PROBLÈME -->
+<section class="probleme" id="probleme">
+  <span class="section-label">Le problème</span>
+  <h2 class="section-title">Trois numéros.<br>Aucune coordination.</h2>
+  <p class="section-body">Aujourd'hui au Sénégal, en cas d'urgence, vous devez savoir quel numéro appeler, espérer que la ligne réponde, et que les secours se coordonnent seuls. C'est inacceptable.</p>
+
+  <div class="numeros-grid">
+    <div class="numero-card dead">
+      <div class="numero-big">17</div>
+      <div class="numero-name">POLICE SECOURS</div>
+      <ul class="numero-issues">
+        <li>Pas de géolocalisation automatique</li>
+        <li>Aucune interconnexion avec le 18 ou 1515</li>
+        <li>Pannes reconnues publiquement</li>
+        <li>Couverture uniquement urbaine</li>
+      </ul>
+    </div>
+    <div class="numero-card dead">
+      <div class="numero-big">18</div>
+      <div class="numero-name">SAPEURS-POMPIERS</div>
+      <ul class="numero-issues">
+        <li>Dispatch encore manuel et radio</li>
+        <li>Couverture rurale insuffisante</li>
+        <li>Délais &gt; 30 min hors Dakar</li>
+        <li>Aucun lien formalisé avec le SAMU</li>
+      </ul>
+    </div>
+    <div class="numero-card dead">
+      <div class="numero-big">1515</div>
+      <div class="numero-name">SAMU NATIONAL</div>
+      <ul class="numero-issues">
+        <li>5 antennes seulement (sur 14 régions)</li>
+        <li>Parc ambulancier insuffisant</li>
+        <li>Pas d'interopérabilité avec les pompiers</li>
+        <li>Conseil AMU de 2005 jamais installé</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top:48px; padding:40px; background:var(--vert); border-radius:16px; display:flex; align-items:center; gap:40px; flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif; font-size:80px; color:#fff; flex-shrink:0">221</div>
+    <div>
+      <p style="font-size:22px; font-weight:700; color:#fff; margin-bottom:12px">La solution : un seul numéro, tous les secours.</p>
+      <p style="font-size:15px; color:rgba(255,255,255,0.7); max-width:500px; line-height:1.6">Police, Gendarmerie, Pompiers, SAMU, Hôpitaux — centralisés dans un Centre National de Réception et de Dispatch, géolocalisé, 24h/24, accessible depuis tout téléphone à 25 FCFA.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT ÇA MARCHE -->
+<section class="comment" id="comment">
+  <span class="section-label">Fonctionnement</span>
+  <h2 class="section-title">Comment ça<br>marche.</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-icon">📱</div>
+      <h3>Vous composez le 221</h3>
+      <p>Depuis tout téléphone, fixe ou mobile, avec ou sans crédit. 25 FCFA débités à la prochaine recharge si nécessaire.</p>
+      <div class="step-connector"></div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-icon">📍</div>
+      <h3>Votre position est détectée</h3>
+      <p>Géolocalisation automatique transmise à l'opérateur. Pas besoin d'expliquer où vous êtes.</p>
+      <div class="step-connector"></div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-icon">🎯</div>
+      <h3>L'opérateur dispatche</h3>
+      <p>Police, Pompiers, SAMU ou Hôpital — les secours les plus proches sont envoyés simultanément si nécessaire.</p>
+      <div class="step-connector"></div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-icon">🚑</div>
+      <h3>Les secours arrivent</h3>
+      <p>Délai cible inférieur à 8 minutes à Dakar. Les ressources disponibles les plus proches, coordonnées en temps réel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION -->
+<section class="app-section" id="app">
+  <div>
+    <span class="section-label" style="color:rgba(255,255,255,0.4)">Application mobile</span>
+    <h2 class="section-title">La bêta<br>est déjà<br>en ligne.</h2>
+    <p class="section-body">Testez dès maintenant l'application 221 — fonctionnelle, gratuite, accessible sur tout smartphone.</p>
+    <ul class="app-features">
+      <li><span class="feat-icon">🆘</span> Bouton SOS géolocalisé</li>
+      <li><span class="feat-icon">🤫</span> Alerte silencieuse (agression, violence)</li>
+      <li><span class="feat-icon">👁</span> Mode Témoin — je signale sans être victime</li>
+      <li><span class="feat-icon">🛣</span> Trajet Sécurisé — alerte si je ne reviens pas</li>
+      <li><span class="feat-icon">🗺</span> Carte des services d'urgence de Dakar</li>
+      <li><span class="feat-icon">🏥</span> Signalement des refus hospitaliers</li>
+    </ul>
+    <a href="https://thiawamadou-zoo.github.io/221/" target="_blank" class="btn-app">
+      Tester l'application →
+    </a>
+  </div>
+  <div class="app-mockup">
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-221">221</div>
+      <div class="phone-sos">🆘</div>
+      <div class="phone-label">APPUYER EN URGENCE</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOUTIENS -->
+<section class="soutiens" id="soutiens">
+  <span class="section-label">Soutiens institutionnels</span>
+  <h2 class="section-title">Ils ont dit<br>oui.</h2>
+  <p class="section-body">Le projet 221 a déjà reçu des engagements concrets de plusieurs institutions clés du Sénégal.</p>
+  <div class="soutiens-grid">
+    <div class="soutien-card">
+      <div class="soutien-logo">SONATEL</div>
+      <div class="soutien-org">SONATEL — Groupe Orange</div>
+      <div class="soutien-detail">Le Directeur Général a confirmé le soutien de SONATEL sur les volets hébergement, réseau et liaisons spécialisées.</div>
+      <span class="soutien-badge">✓ Soutien confirmé</span>
+    </div>
+    <div class="soutien-card">
+      <div class="soutien-logo">SAMU</div>
+      <div class="soutien-org">SAMU National — 1515</div>
+      <div class="soutien-detail">Le Directeur Général du SAMU National a validé l'intégration du 1515 dans le dispositif 221.</div>
+      <span class="soutien-badge">✓ Intégration validée</span>
+    </div>
+    <div class="soutien-card">
+      <div class="soutien-logo">ARTP</div>
+      <div class="soutien-org">ARTP — Autorité de Régulation</div>
+      <div class="soutien-detail">L'ARTP confirme travailler sur une refonte du système national d'urgence (lettre N° 00879, mars 2026).</div>
+      <span class="soutien-badge">✓ Cadre réglementaire</span>
+    </div>
+    <div class="soutien-card">
+      <div class="soutien-logo">MFA</div>
+      <div class="soutien-org">Ministère des Forces Armées</div>
+      <div class="soutien-detail">Redirigé officiellement vers le Ministère de l'Intérieur, désigné autorité centrale de mise en œuvre.</div>
+      <span class="soutien-badge">→ Redirection officielle</span>
+    </div>
+    <div class="soutien-card">
+      <div class="soutien-logo">MIN.</div>
+      <div class="soutien-org">Cabinet Télécommunications</div>
+      <div class="soutien-detail">Le cabinet de l'ancien Ministère des Télécommunications a reçu favorablement le projet lors d'une audience.</div>
+      <span class="soutien-badge">✓ Audience accordée</span>
+    </div>
+    <div class="soutien-card" style="border-style:dashed; background:#f9f9f9;">
+      <div class="soutien-logo" style="color:var(--gris)">+ ???</div>
+      <div class="soutien-org">Votre institution</div>
+      <div class="soutien-detail">Le projet 221 est ouvert à tout partenariat institutionnel, académique ou privé pour accélérer sa mise en œuvre.</div>
+      <span class="soutien-badge" style="background:#f0f0f0; color:var(--gris)">Rejoindre le projet</span>
+    </div>
+  </div>
+</section>
+
+<!-- PÉTITION -->
+<section class="petition" id="petition">
+  <div class="petition-inner">
+    <div class="petition-text">
+      <span class="section-label">Pétition citoyenne</span>
+      <h2 class="section-title">Signez.<br>Partagez.<br>Sauvez<br>des vies.</h2>
+      <p class="section-body">Chaque signature est un signal envoyé aux décideurs : le Sénégal est prêt pour son numéro d'urgence unique. Votre nom compte.</p>
+      <div class="petition-count-wrap">
+        <div class="petition-count"><span id="count-display">0</span></div>
+        <div class="petition-goal">signataires · objectif 10 000</div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+      <div class="signataires-recents">
+        <h4>Derniers signataires</h4>
+        <div id="signataires-list">
+          <div class="signataire-item">
+            <div class="signataire-avatar">A</div>
+            <div class="signataire-info">
+              <div class="signataire-name">Aminata D.</div>
+              <div class="signataire-loc">Dakar, Sénégal</div>
+            </div>
+            <div class="signataire-time">il y a 2 min</div>
+          </div>
+          <div class="signataire-item">
+            <div class="signataire-avatar">M</div>
+            <div class="signataire-info">
+              <div class="signataire-name">Moussa K.</div>
+              <div class="signataire-loc">Thiès, Sénégal</div>
+            </div>
+            <div class="signataire-time">il y a 5 min</div>
+          </div>
+          <div class="signataire-item">
+            <div class="signataire-avatar">F</div>
+            <div class="signataire-info">
+              <div class="signataire-name">Fatou S.</div>
+              <div class="signataire-loc">Saint-Louis, Sénégal</div>
+            </div>
+            <div class="signataire-time">il y a 8 min</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="form-card" id="form-wrap">
+        <h3>Je signe la pétition 221</h3>
+        <p>Votre signature sera transmise aux autorités sénégalaises compétentes.</p>
+        <div class="form-grid">
+          <div class="form-group">
+            <input type="text" id="f-prenom" placeholder="Prénom *" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="f-nom" placeholder="Nom *" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="email" id="f-email" placeholder="Adresse email *" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" id="f-tel" placeholder="Téléphone (facultatif)">
+        </div>
+        <div class="form-group">
+          <select id="f-region">
+            <option value="">Votre région / pays</option>
+            <optgroup label="Sénégal">
+              <option>Dakar</option><option>Thiès</option><option>Saint-Louis</option>
+              <option>Ziguinchor</option><option>Kaolack</option><option>Diourbel</option>
+              <option>Louga</option><option>Tambacounda</option><option>Kolda</option>
+              <option>Fatick</option><option>Matam</option><option>Kaffrine</option>
+              <option>Kédougou</option><option>Sédhiou</option>
+            </optgroup>
+            <optgroup label="Diaspora">
+              <option>France</option><option>États-Unis</option><option>Italie</option>
+              <option>Espagne</option><option>Canada</option><option>Autre pays</option>
+            </optgroup>
+          </select>
+        </div>
+        <button class="btn-signer" onclick="signer()">
+          ✊ Je signe pour le 221
+        </button>
+        <p class="form-privacy">Vos données sont confidentielles et utilisées uniquement pour cette pétition. Elles ne seront jamais revendues.</p>
+      </div>
+
+      <div class="success-msg" id="success-wrap">
+        <div class="check">✅</div>
+        <h3>Merci, vous avez signé !</h3>
+        <p>Votre signature est enregistrée. Maintenant, aidez le 221 à atteindre 10 000 signataires en partageant.</p>
+        <div class="share-btns">
+          <button class="share-btn share-wa" onclick="partager('wa')">📱 WhatsApp</button>
+          <button class="share-btn share-tw" onclick="partager('tw')">𝕏 Twitter / X</button>
+          <button class="share-btn share-fb" onclick="partager('fb')">Facebook</button>
+          <button class="share-btn share-cp" onclick="partager('cp')">🔗 Copier le lien</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <span class="section-label" style="text-align:center; display:block">Contact</span>
+  <h2 class="section-title">Porteur du projet</h2>
+  <p class="section-body">Pour toute demande institutionnelle, partenariat ou information sur le projet 221.</p>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <div class="ico">👤</div>
+      <h4>PORTEUR DU PROJET</h4>
+      <p>Amadou Abdou THIAW</p>
+    </div>
+    <div class="contact-card">
+      <div class="ico">📞</div>
+      <h4>TÉLÉPHONE</h4>
+      <p>78 589 89 97</p>
+    </div>
+    <div class="contact-card">
+      <div class="ico">📍</div>
+      <h4>LOCALISATION</h4>
+      <p>Dakar, Sénégal</p>
+    </div>
+    <div class="contact-card">
+      <div class="ico">📱</div>
+      <h4>APPLICATION BÊTA</h4>
+      <p><a href="https://thiawamadou-zoo.github.io/221/" target="_blank" style="color:var(--vert)">Tester maintenant →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-221">221</div>
+  <div class="footer-text">
+    Projet citoyen — Numéro d'Urgence National Unique du Sénégal<br>
+    © 2026 Amadou Abdou THIAW · Dakar, Sénégal<br>
+    <span style="color:rgba(255,255,255,0.15)">Dossier complet disponible sur demande</span>
+  </div>
+  <div class="footer-flag">🇸🇳</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// Compteur de signatures (simulé pour la démo)
+let sigCount = 127;
+
+function animCount(target, el) {
+  let current = 0;
+  const step = Math.ceil(target / 60);
+  const interval = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = current.toLocaleString('fr-FR');
+    if (current >= target) clearInterval(interval);
+  }, 30);
+}
+
+window.addEventListener('load', () => {
+  animCount(sigCount, document.getElementById('count-display'));
+  updateProgress(sigCount);
+});
+
+function updateProgress(n) {
+  const pct = Math.min((n / 10000) * 100, 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+}
+
+const VILLES = ['Dakar','Thiès','Rufisque','Mbour','Touba','Ziguinchor','Saint-Louis','Kaolack','Paris','Lyon','Bordeaux','New York','Madrid','Rome'];
+const PRENOMS = ['Aminata','Moussa','Fatou','Ibrahima','Mariama','Cheikh','Aïssatou','Mamadou','Ndéye','Ousmane','Awa','Seydou','Rokhaya','Babacar'];
+
+function signer() {
+  const prenom = document.getElementById('f-prenom').value.trim();
+  const nom = document.getElementById('f-nom').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+
+  if (!prenom || !nom || !email) {
+    showToast('⚠️ Merci de renseigner prénom, nom et email.');
+    return;
+  }
+  if (!email.includes('@')) {
+    showToast('⚠️ Adresse email invalide.');
+    return;
+  }
+
+  // Ajouter le signataire en haut de la liste
+  const region = document.getElementById('f-region').value || 'Sénégal';
+  ajouterSignataire(prenom + ' ' + nom.charAt(0) + '.', region, 'à l\'instant');
+
+  // Incrémenter le compteur
+  sigCount++;
+  document.getElementById('count-display').textContent = sigCount.toLocaleString('fr-FR');
+  updateProgress(sigCount);
+
+  // Afficher la confirmation
+  document.getElementById('form-wrap').style.display = 'none';
+  document.getElementById('success-wrap').style.display = 'block';
+  showToast('✅ Signature enregistrée ! Merci ' + prenom + ' !');
+}
+
+function ajouterSignataire(nom, region, temps) {
+  const list = document.getElementById('signataires-list');
+  const item = document.createElement('div');
+  item.className = 'signataire-item';
+  item.style.animation = 'fadeUp 0.4s ease';
+  item.innerHTML = `
+    <div class="signataire-avatar" style="background:rgba(0,102,51,0.4)">${nom.charAt(0)}</div>
+    <div class="signataire-info">
+      <div class="signataire-name">${nom}</div>
+      <div class="signataire-loc">${region}, Sénégal</div>
+    </div>
+    <div class="signataire-time">${temps}</div>`;
+  list.insertBefore(item, list.firstChild);
+  if (list.children.length > 4) list.removeChild(list.lastChild);
+}
+
+function partager(reseau) {
+  const url = window.location.href.split('#')[0];
+  const msg = encodeURIComponent('Je viens de signer la pétition pour le 221, le numéro d\'urgence unique du Sénégal. Signez aussi ! ' + url + ' #221Sénégal #Urgence');
+  const liens = {
+    wa: 'https://wa.me/?text=' + msg,
+    tw: 'https://twitter.com/intent/tweet?text=' + msg,
+    fb: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url),
+    cp: null
+  };
+  if (reseau === 'cp') {
+    navigator.clipboard.writeText(url + ' — Signez la pétition 221 #221Sénégal').then(() => {
+      showToast('🔗 Lien copié !');
+    });
+  } else {
+    window.open(liens[reseau], '_blank');
+  }
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+// Simulation de nouveaux signataires toutes les 45s
+setInterval(() => {
+  const p = PRENOMS[Math.floor(Math.random() * PRENOMS.length)];
+  const v = VILLES[Math.floor(Math.random() * VILLES.length)];
+  const mins = Math.floor(Math.random() * 5) + 1;
+  ajouterSignataire(p + ' ' + String.fromCharCode(65 + Math.floor(Math.random() * 26)) + '.', v, 'il y a ' + mins + ' min');
+}, 45000);
+</script>
+</body>
+</html>
