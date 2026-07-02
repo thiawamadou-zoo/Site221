@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fonctionnalités · Application 221 · Sénégal</title>
+<meta name="description" content="Toutes les fonctionnalités de l'application mobile 221 — numéro d'urgence unique du Sénégal.">
+<meta name="theme-color" content="#006633">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --vert: #006633;
+  --rouge: #CC0000;
+  --or: #B8860B;
+  --blanc: #F8F6F1;
+  --noir: #0D0D0D;
+  --gris: #6B6B6B;
+  --gris-clair: #E8E5DE;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--blanc); color: var(--noir); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 40px;
+  background: rgba(248,246,241,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gris-clair);
+}
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--vert); letter-spacing: 2px; text-decoration: none; }
+.nav-back {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 500; color: var(--gris);
+  text-decoration: none; transition: color 0.2s;
+}
+.nav-back:hover { color: var(--vert); }
+.nav-app {
+  background: var(--vert); color: #fff;
+  padding: 10px 22px; border-radius: 6px;
+  font-size: 13px; font-weight: 600;
+  text-decoration: none; transition: background 0.2s;
+}
+.nav-app:hover { background: #004d25; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--noir) 0%, #0d2b1a 100%);
+  padding: 140px 40px 80px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '221';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font-family: 'Bebas Neue', sans-serif; font-size: 400px;
+  color: rgba(255,255,255,0.02); letter-spacing: 8px;
+  pointer-events: none; white-space: nowrap;
+}
+.hero-label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--vert); margin-bottom: 20px; display: block; }
+.hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 8vw, 88px); color: #fff; letter-spacing: 2px; line-height: 1; margin-bottom: 20px; }
+.hero p { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 580px; margin: 0 auto 40px; line-height: 1.7; }
+.hero-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.badge { padding: 8px 18px; border-radius: 20px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; }
+.badge-green { background: rgba(0,102,51,0.3); color: #4ade80; border: 1px solid rgba(0,102,51,0.5); }
+.badge-white { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.12); }
+
+/* GRILLE FONCTIONNALITÉS */
+.features-section { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+.features-intro { text-align: center; margin-bottom: 72px; }
+.features-intro h2 { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: var(--noir); margin-bottom: 16px; }
+.features-intro p { font-size: 17px; color: var(--gris); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+.feat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--gris-clair); border: 2px solid var(--gris-clair); border-radius: 16px; overflow: hidden; }
+
+.feat-card {
+  background: var(--blanc); padding: 48px 44px;
+  transition: background 0.2s;
+  position: relative;
+}
+.feat-card:hover { background: #f0f9f4; }
+
+.feat-card-header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 24px; }
+.feat-emoji {
+  width: 64px; height: 64px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px; flex-shrink: 0;
+}
+.feat-title-block { flex: 1; }
+.feat-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--vert); text-transform: uppercase; margin-bottom: 6px; display: block; }
+.feat-title { font-size: 22px; font-weight: 700; color: var(--noir); line-height: 1.25; }
+
+.feat-desc { font-size: 15px; color: var(--gris); line-height: 1.75; margin-bottom: 24px; }
+
+.feat-details { list-style: none; }
+.feat-details li {
+  font-size: 14px; color: var(--noir); padding: 10px 0;
+  border-bottom: 1px solid var(--gris-clair);
+  display: flex; gap: 12px; align-items: flex-start; line-height: 1.5;
+}
+.feat-details li:last-child { border-bottom: none; }
+.feat-details li::before { content: '›'; color: var(--vert); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+.feat-tag {
+  display: inline-block; margin-top: 20px;
+  padding: 5px 14px; border-radius: 20px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+}
+
+/* Couleurs par fonctionnalité */
+.f1 .feat-emoji { background: #fee2e2; }
+.f1 .feat-tag { background: #fee2e2; color: #991b1b; }
+.f2 .feat-emoji { background: #f3e8ff; }
+.f2 .feat-tag { background: #f3e8ff; color: #6b21a8; }
+.f3 .feat-emoji { background: #dbeafe; }
+.f3 .feat-tag { background: #dbeafe; color: #1e40af; }
+.f4 .feat-emoji { background: #dcfce7; }
+.f4 .feat-tag { background: #dcfce7; color: #166534; }
+.f5 .feat-emoji { background: #fef3c7; }
+.f5 .feat-tag { background: #fef3c7; color: #92400e; }
+.f6 .feat-emoji { background: #ffe4e6; }
+.f6 .feat-tag { background: #ffe4e6; color: #9f1239; }
+.f7 .feat-emoji { background: #e0f2fe; }
+.f7 .feat-tag { background: #e0f2fe; color: #0c4a6e; }
+
+/* CARTE VOLONTAIRE — pleine largeur */
+.feat-card.full-width { grid-column: 1 / -1; }
+.feat-card.full-width .feat-details { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+
+/* CTA BAS DE PAGE */
+.cta-section {
+  background: var(--vert); padding: 80px 40px; text-align: center;
+}
+.cta-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: 56px; color: #fff; margin-bottom: 16px; }
+.cta-section p { font-size: 17px; color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 40px; line-height: 1.7; }
+.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 18px 36px; background: #fff; color: var(--vert);
+  text-decoration: none; border-radius: 8px;
+  font-size: 16px; font-weight: 700; transition: all 0.2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 18px 36px; background: transparent;
+  color: #fff; border: 2px solid rgba(255,255,255,0.3);
+  text-decoration: none; border-radius: 8px;
+  font-size: 16px; font-weight: 600; transition: all 0.2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
+
+/* FOOTER */
+footer {
+  background: var(--noir); padding: 40px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+}
+.footer-text { font-size: 13px; color: rgba(255,255,255,0.3); line-height: 1.6; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 16px 20px; }
+  .hero { padding: 110px 20px 60px; }
+  .features-section { padding: 60px 20px; }
+  .feat-grid { grid-template-columns: 1fr; }
+  .feat-card { padding: 36px 28px; }
+  .feat-card.full-width .feat-details { grid-template-columns: 1fr; }
+  .cta-section { padding: 60px 20px; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">221 🇸🇳</a>
+  <a href="index.html" class="nav-back">← Retour au site</a>
+  <a href="https://thiawamadou-zoo.github.io/221/" target="_blank" class="nav-app">Tester l'app →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-label">Application mobile · Projet 221</span>
+  <h1>7 fonctionnalités.<br>Une seule mission.</h1>
+  <p>L'application 221 est conçue pour que chaque Sénégalais puisse agir en situation d'urgence — qu'il soit victime, témoin ou secouriste volontaire.</p>
+  <div class="hero-badges">
+    <span class="badge badge-green">✓ Bêta disponible</span>
+    <span class="badge badge-white">FR · WO · EN · Pulaar · Sérère</span>
+    <span class="badge badge-white">Fonctionne hors connexion</span>
+    <span class="badge badge-white">Gratuit</span>
+  </div>
+</section>
+
+<!-- FONCTIONNALITÉS -->
+<section class="features-section">
+  <div class="features-intro">
+    <h2>Détail des fonctionnalités</h2>
+    <p>Chaque module répond à un besoin réel identifié sur le terrain au Sénégal.</p>
+  </div>
+
+  <div class="feat-grid">
+
+    <!-- 1. SOS géolocalisé -->
+    <div class="feat-card f1">
+      <div class="feat-card-header">
+        <div class="feat-emoji">🆘</div>
+        <div class="feat-title-block">
+          <span class="feat-num">01 · Urgence</span>
+          <h3 class="feat-title">Bouton SOS géolocalisé</h3>
+        </div>
+      </div>
+      <p class="feat-desc">En un seul appui, l'application déclenche une alerte d'urgence complète et transmet automatiquement votre position aux secours les plus proches — sans avoir à parler, sans avoir à expliquer où vous êtes.</p>
+      <ul class="feat-details">
+        <li>Appui unique sur le bouton rouge pour déclencher l'alerte</li>
+        <li>Transmission GPS automatique de vos coordonnées précises</li>
+        <li>Choix du type d'urgence : médical, incendie, sécurité</li>
+        <li>Confirmation visuelle et sonore de l'envoi de l'alerte</li>
+        <li>Fonctionne avec ou sans connexion internet (SMS de secours)</li>
+      </ul>
+      <span class="feat-tag">Disponible en bêta</span>
+    </div>
+
+    <!-- 2. Alerte silencieuse -->
+    <div class="feat-card f2">
+      <div class="feat-card-header">
+        <div class="feat-emoji">🤫</div>
+        <div class="feat-title-block">
+          <span class="feat-num">02 · Protection</span>
+          <h3 class="feat-title">Alerte silencieuse</h3>
+        </div>
+      </div>
+      <p class="feat-desc">Conçue pour les situations où parler ou agir visiblement est dangereux : violences conjugales, agressions, braquages. L'alerte est envoyée discrètement, sans son, sans écran allumé.</p>
+      <ul class="feat-details">
+        <li>Déclenchement par code discret ou pression longue sur bouton latéral</li>
+        <li>Écran éteint ou affichage neutre pendant l'alerte</li>
+        <li>Transmission de la localisation en temps réel aux secours</li>
+        <li>Envoi automatique à un contact de confiance prédéfini</li>
+        <li>Mode spécial violences domestiques avec protocole adapté</li>
+      </ul>
+      <span class="feat-tag">Disponible en bêta</span>
+    </div>
+
+    <!-- 3. Mode Témoin -->
+    <div class="feat-card f3">
+      <div class="feat-card-header">
+        <div class="feat-emoji">👁</div>
+        <div class="feat-title-block">
+          <span class="feat-num">03 · Signalement</span>
+          <h3 class="feat-title">Mode Témoin</h3>
+        </div>
+      </div>
+      <p class="feat-desc">Vous êtes témoin d'une urgence mais vous n'êtes pas la victime. Ce mode vous permet de signaler et d'aider sans vous mettre en danger, tout en guidant les secours vers la scène.</p>
+      <ul class="feat-details">
+        <li>Signalement de la situation et du lieu de l'incident</li>
+        <li>Description guidée par formulaire rapide (type, gravité, nb de victimes)</li>
+        <li>Partage de la position GPS de l'incident (≠ votre position)</li>
+        <li>Possibilité d'envoyer une photo ou vidéo aux secours</li>
+        <li>Suivi en temps réel de l'arrivée des secours signalés</li>
+      </ul>
+      <span class="feat-tag">Disponible en bêta</span>
+    </div>
+
+    <!-- 4. Trajet Sécurisé -->
+    <div class="feat-card f4">
+      <div class="feat-card-header">
+        <div class="feat-emoji">🛣</div>
+        <div class="feat-title-block">
+          <span class="feat-num">04 · Prévention</span>
+          <h3 class="feat-title">Trajet Sécurisé</h3>
+        </div>
+      </div>
+      <p class="feat-desc">Avant un déplacement à risque (nuit, zone isolée, rendez-vous inconnu), activez ce mode. Si vous n'arrivez pas à destination dans le délai prévu, une alerte est automatiquement envoyée.</p>
+      <ul class="feat-details">
+        <li>Définition de la destination et du délai estimé d'arrivée</li>
+        <li>Partage du trajet en temps réel avec un contact de confiance</li>
+        <li>Alerte automatique si le check-in d'arrivée n'est pas effectué</li>
+        <li>Bouton "Je suis arrivé" pour désactiver manuellement l'alerte</li>
+        <li>Historique des trajets et statistiques de sécurité</li>
+      </ul>
+      <span class="feat-tag">Disponible en bêta</span>
+    </div>
+
+    <!-- 5. Carte des urgences -->
+    <div class="feat-card f5">
+      <div class="feat-card-header">
+        <div class="feat-emoji">🗺</div>
+        <div class="feat-title-block">
+          <span class="feat-num">05 · Information</span>
+          <h3 class="feat-title">Carte des services d'urgence</h3>
+        </div>
+      </div>
+      <p class="feat-desc">Une carte interactive recensant en temps réel tous les services d'urgence accessibles autour de vous : hôpitaux, brigades de pompiers, commissariats, pharmacies de garde, cliniques.</p>
+      <ul class="feat-details">
+        <li>Plus de 220 structures de santé géolocalisées sur Dakar</li>
+        <li>Filtrage par type (hôpital, clinique, pharmacie, pompiers, police)</li>
+        <li>Affichage des horaires d'ouverture et statut (ouvert/fermé)</li>
+        <li>Itinéraire vers la structure la plus proche en un clic</li>
+        <li>Signalement des refus de prise en charge directement depuis la carte</li>
+      </ul>
+      <span class="feat-tag">Disponible en bêta</span>
+    </div>
+
+    <!-- 6. Signalement refus hospitalier -->
+    <div class="feat-card f6">
+      <div class="feat-card-header">
+        <div class="feat-emoji">🏥</div>
+        <div class="feat-title-block">
+          <span class="feat-num">06 · Droits</span>
+          <h3 class="feat-title">Signalement des refus hospitaliers</h3>
+        </div>
+      </div>
+      <p class="feat-desc">Le refus de soins est illégal mais courant. Ce module permet de signaler immédiatement tout refus de prise en charge, de constituer un dossier horodaté et de trouver l'alternative la plus proche.</p>
+      <ul class="feat-details">
+        <li>Formulaire de signalement rapide (établissement, motif, heure)</li>
+        <li>Génération automatique d'un rapport horodaté et géolocalisé</li>
+        <li>Alerte aux autorités sanitaires compétentes</li>
+        <li>Redirection immédiate vers l'établissement alternatif le plus proche</li>
+        <li>Suivi du signalement et retour de l'administration</li>
+      </ul>
+      <span class="feat-tag">Disponible en bêta</span>
+    </div>
+
+    <!-- 7. Mode Volontaire — pleine largeur -->
+    <div class="feat-card f7 full-width">
+      <div class="feat-card-header">
+        <div class="feat-emoji">🤝</div>
+        <div class="feat-title-block">
+          <span class="feat-num">07 · Communauté · Fonctionnalité phare</span>
+          <h3 class="feat-title">Mode Volontaire 221 — Rejoindre le réseau de secouristes</h3>
+        </div>
+      </div>
+      <p class="feat-desc" style="max-width:800px">
+        Le Mode Volontaire 221 est la fonctionnalité la plus innovante de l'application. Elle transforme chaque citoyen formé aux gestes de premiers secours en maillon du réseau d'urgence national. Inspiré du modèle des <em>Community First Responders</em> (Royaume-Uni, Kenya, Rwanda), il permet d'intervenir en attendant l'arrivée des secours officiels — réduisant le délai effectif d'intervention de 30 minutes à moins de 5 minutes dans les zones denses.
+      </p>
+      <ul class="feat-details">
+        <li>Inscription comme Volontaire 221 après validation d'une formation de premiers secours (PSC1 ou équivalent)</li>
+        <li>Réception d'alertes géolocalisées en temps réel pour les urgences proches (rayon paramétrable)</li>
+        <li>Interface dédiée CNRD-221 pour les opérateurs du Centre National de Réception et de Dispatch</li>
+        <li>Carte en direct des volontaires actifs autour de chaque incident</li>
+        <li>Guide de premiers secours intégré accessible hors connexion (RCP, hémorragie, brûlures, noyade)</li>
+        <li>Système de notation et de validation des interventions pour garantir la qualité</li>
+        <li>Accès à un programme de formation continue et certification Volontaire 221</li>
+        <li>Tableau de bord personnel : interventions, impact, badges de reconnaissance communautaire</li>
+      </ul>
+      <span class="feat-tag" style="margin-top:28px">En cours de déploiement</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Testez l'application dès maintenant.</h2>
+  <p>La bêta est gratuite, fonctionnelle et accessible depuis tout navigateur mobile. Aucune installation requise.</p>
+  <div class="cta-btns">
+    <a href="https://thiawamadou-zoo.github.io/221/" target="_blank" class="btn-primary">
+      🆘 Tester l'application →
+    </a>
+    <a href="index.html#petition" class="btn-secondary">
+      ✊ Signer la pétition
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="font-family:'Bebas Neue',sans-serif; font-size:36px; color:rgba(255,255,255,0.08); letter-spacing:4px">221</div>
+  <div class="footer-text">
+    Application mobile — Projet 221 · Numéro d'Urgence National Unique du Sénégal<br>
+    © 2026 Amadou Abdou THIAW · Dakar, Sénégal
+  </div>
+  <div style="font-size:24px">🇸🇳</div>
+</footer>
+
+</body>
+</html>
