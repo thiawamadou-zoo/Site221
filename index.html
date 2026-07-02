@@ -189,7 +189,7 @@ section { padding: 100px 40px; }
 .petition-count span { color: var(--or); }
 .petition-goal { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 6px; letter-spacing: 0.5px; }
 .progress-bar { height: 6px; background: rgba(255,255,255,0.15); border-radius: 3px; margin-top: 16px; overflow: hidden; }
-.progress-fill { height: 100%; background: var(--or); border-radius: 3px; width: 59.34%; transition: width 1s ease; }
+.progress-fill { height: 100%; background: var(--or); border-radius: 3px; width: 91.9%; transition: width 1s ease; }
 .form-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 40px; backdrop-filter: blur(8px); }
 .form-card h3 { font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 6px; }
 .form-card p { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
@@ -439,8 +439,16 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 .eco-card.planned   { border-color: rgba(184,134,11,0.25); }
 .eco-card.discussion{ border-color: var(--gris-clair); }
 .eco-emoji { font-size: 28px; margin-bottom: 10px; }
+.eco-emoji-custom {
+  width: 52px; height: 52px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 10px; flex-shrink: 0;
+}
 .eco-name  { font-size: 12px; font-weight: 700; color: var(--noir); margin-bottom: 4px; line-height: 1.3; }
-.eco-role  { font-size: 10px; color: var(--gris); line-height: 1.4; margin-bottom: 10px; }
+.eco-role  { font-size: 10px; color: var(--gris); line-height: 1.4; }
+.eco-card.confirmed { border-color: rgba(22,163,74,0.25); }
+.eco-card.planned   { border-color: rgba(184,134,11,0.25); }
+.eco-card.discussion{ border-color: var(--gris-clair); }
 .eco-num   { font-size: 10px; font-weight: 600; letter-spacing: 0.3px; color: var(--vert); }
 .eco-dot   { width: 8px; height: 8px; border-radius: 50%; margin: 10px auto 0; }
 .confirmed-dot { background: #16a34a; }
@@ -520,6 +528,134 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 .green-btn { background: rgba(22,163,74,0.2);  color: #86efac; }
 
 /* ══════════════════════════════════════════
+   TIMELINE
+   ══════════════════════════════════════════ */
+.timeline-section { background: var(--blanc); padding: 100px 40px; }
+.timeline { max-width: 860px; margin: 0 auto; position: relative; }
+.timeline::before {
+  content: ''; position: absolute; left: 28px; top: 0; bottom: 0;
+  width: 2px; background: var(--gris-clair);
+}
+.tl-item {
+  display: flex; gap: 40px; margin-bottom: 48px;
+  position: relative;
+}
+.tl-item:last-child { margin-bottom: 0; }
+.tl-dot {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 800; flex-shrink: 0;
+  position: relative; z-index: 1;
+  font-family: 'Bebas Neue', sans-serif; letter-spacing: 1px;
+}
+.tl-item.done .tl-dot   { background: var(--vert); color: #fff; }
+.tl-item.active .tl-dot { background: var(--rouge); color: #fff; box-shadow: 0 0 0 6px rgba(204,0,0,0.12); animation: sosPulse 2s infinite; }
+.tl-item.pending .tl-dot{ background: var(--gris-clair); color: var(--gris); }
+
+.tl-content { flex: 1; padding-top: 8px; }
+.tl-date { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--vert); margin-bottom: 6px; }
+.tl-item.active .tl-date { color: var(--rouge); }
+.tl-item.pending .tl-date { color: var(--gris); }
+.tl-title { font-size: 20px; font-weight: 700; color: var(--noir); margin-bottom: 10px; line-height: 1.3; }
+.tl-desc { font-size: 14px; color: var(--gris); line-height: 1.7; margin-bottom: 14px; }
+.tl-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.tl-tag { font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.3px; }
+.done-tag    { background: #dcfce7; color: #166534; }
+.active-tag  { background: #fee2e2; color: #991b1b; }
+.pending-tag { background: var(--gris-clair); color: var(--gris); }
+
+/* ══════════════════════════════════════════
+   FAQ
+   ══════════════════════════════════════════ */
+.faq-section { background: var(--gris-clair); padding: 100px 40px; }
+.faq-list { display: flex; flex-direction: column; gap: 2px; }
+.faq-item { background: var(--blanc); border-radius: 0; overflow: hidden; }
+.faq-item:first-child { border-radius: 12px 12px 0 0; }
+.faq-item:last-child  { border-radius: 0 0 12px 12px; }
+.faq-q {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  gap: 20px; padding: 22px 28px; background: none; border: none;
+  font-size: 16px; font-weight: 600; color: var(--noir);
+  font-family: 'DM Sans', sans-serif; text-align: left;
+  cursor: pointer; transition: background 0.15s;
+}
+.faq-q:hover { background: #f9f9f7; }
+.faq-arrow {
+  font-size: 22px; font-weight: 300; color: var(--vert);
+  flex-shrink: 0; transition: transform 0.25s;
+  width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
+  background: #e8f5ee; border-radius: 50%;
+  font-size: 16px; font-weight: 700;
+}
+.faq-q.open .faq-arrow { transform: rotate(45deg); background: var(--vert); color: #fff; }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.25s;
+  padding: 0 28px;
+}
+.faq-a.open { max-height: 400px; padding: 0 28px 22px; }
+.faq-a p { font-size: 15px; color: var(--gris); line-height: 1.75; }
+
+/* ══════════════════════════════════════════
+   À PROPOS & CONTACT
+   ══════════════════════════════════════════ */
+.apropos-section { background: var(--noir); padding: 100px 40px; }
+.apropos-inner {
+  display: grid; grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px; max-width: 1200px; margin: 0 auto; align-items: start;
+}
+.apropos-profil .section-label { color: rgba(255,255,255,0.4); }
+.apropos-profil .section-title { color: #fff; margin-bottom: 28px; }
+.apropos-bio p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.75; }
+.apropos-bio strong { color: rgba(255,255,255,0.9); }
+.apropos-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.apropos-badge {
+  font-size: 12px; font-weight: 600; padding: 7px 14px;
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.65);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 20px;
+}
+
+.contact-block {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 40px;
+}
+.contact-block h3 { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.contact-block > p { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 32px; line-height: 1.6; }
+
+.contact-items { display: flex; flex-direction: column; gap: 4px; margin-bottom: 32px; }
+.contact-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 16px; border-radius: 10px;
+  text-decoration: none; transition: background 0.15s;
+}
+.contact-item:hover { background: rgba(255,255,255,0.06); }
+.ci-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.ci-text { display: flex; flex-direction: column; gap: 2px; }
+.ci-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+.ci-value { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.85); }
+
+.contact-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.contact-cta-main {
+  flex: 1; padding: 14px 20px; background: var(--rouge); color: #fff;
+  text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: 700;
+  text-align: center; transition: all 0.2s;
+}
+.contact-cta-main:hover { background: #a80000; }
+.contact-cta-sec {
+  flex: 1; padding: 14px 20px; background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7); text-decoration: none; border-radius: 8px;
+  font-size: 14px; font-weight: 600; text-align: center;
+  border: 1px solid rgba(255,255,255,0.12); transition: all 0.2s;
+}
+.contact-cta-sec:hover { background: rgba(255,255,255,0.14); }
+
+/* ══════════════════════════════════════════
    RESPONSIVE — nouveaux blocs
    ══════════════════════════════════════════ */
 @media (max-width: 900px) {
@@ -527,7 +663,8 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
   .nav-links { display: none; }
   .nav-burger { display: flex; }
   section { padding: 72px 20px; }
-  .urgences-section, .ecosysteme-section, .terminal-section { padding: 72px 20px; }
+  .urgences-section, .ecosysteme-section, .terminal-section,
+  .timeline-section, .faq-section, .apropos-section { padding: 72px 20px; }
   .hero { padding: 100px 20px 60px; }
   .hero-stats { gap: 28px; }
   .drame, .app-section, .petition-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -541,10 +678,14 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
   .demandes-operationnelles { grid-template-columns: 1fr; }
   .demande-item { flex-direction: column; gap: 12px; }
   .demande-num { font-size: 40px; width: auto; }
+  .timeline::before { left: 20px; }
+  .tl-dot { width: 40px; height: 40px; font-size: 14px; }
+  .tl-item { gap: 20px; }
+  .tl-title { font-size: 17px; }
+  .apropos-inner { grid-template-columns: 1fr; gap: 48px; }
   footer { flex-direction: column; text-align: center; }
   .form-grid { grid-template-columns: 1fr; }
   .ts-body { grid-template-columns: 1fr; }
-  .feat-card.full-width .feat-details { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -552,13 +693,18 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">221 🇸🇳</div>
+  <div class="nav-logo" style="display:flex;flex-direction:column;line-height:1;gap:2px">
+    <span style="font-size:32px;letter-spacing:2px;color:var(--vert)">221</span>
+    <span style="font-size:10px;font-family:'DM Sans',sans-serif;font-weight:600;color:var(--gris);letter-spacing:1px;text-transform:uppercase">Numéro d'Urgence National Unique</span>
+    <span style="font-size:10px;font-family:'DM Sans',sans-serif;font-weight:700;color:var(--vert);letter-spacing:1.5px;text-transform:uppercase">CNRD-221</span>
+  </div>
   <div class="nav-links">
     <a href="#probleme">Le problème</a>
-    <a href="#comment">Comment ça marche</a>
     <a href="#app">Application</a>
     <a href="#ecosysteme">Écosystème</a>
-    <a href="#demandes">Nos demandes</a>
+    <a href="#avancement">Avancement</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
     <a href="#petition" class="nav-cta">Signer la pétition</a>
   </div>
   <button class="nav-burger" id="nav-burger" onclick="toggleMenu()" aria-label="Menu">
@@ -569,10 +715,11 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 <!-- MENU MOBILE OVERLAY -->
 <div class="nav-mobile" id="nav-mobile">
   <a href="#probleme" onclick="closeMenu()">Le problème</a>
-  <a href="#comment" onclick="closeMenu()">Comment ça marche</a>
   <a href="#app" onclick="closeMenu()">Application</a>
   <a href="#ecosysteme" onclick="closeMenu()">Écosystème</a>
-  <a href="#demandes" onclick="closeMenu()">Nos demandes</a>
+  <a href="#avancement" onclick="closeMenu()">Avancement</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
   <a href="#petition" class="nav-cta-mobile" onclick="closeMenu()">✊ Signer la pétition</a>
 </div>
 
@@ -582,7 +729,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
   <div class="hero-texture"></div>
   <div class="hero-flag"></div>
   <div class="hero-content">
-    <span class="hero-eyebrow">🇸🇳 République du Sénégal — Initiative citoyenne</span>
+    <span class="hero-eyebrow">République du Sénégal — Initiative citoyenne</span>
     <div class="hero-221">221<span>.</span></div>
     <p class="hero-tagline">Une vie peut tenir à un seul chiffre.<br>Le Sénégal mérite un numéro d'urgence unique.</p>
     <div class="hero-stats">
@@ -591,7 +738,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
         <div class="stat-lbl">abonnés mobiles</div>
       </div>
       <div class="stat">
-        <div class="stat-num" id="hero-signataires">2 967</div>
+        <div class="stat-num" id="hero-signataires">4 595</div>
         <div class="stat-lbl">citoyens ont signé</div>
       </div>
       <div class="stat">
@@ -601,6 +748,17 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       <div class="stat">
         <div class="stat-num">10/10</div>
         <div class="stat-lbl">score Change.org</div>
+      </div>
+      <div class="stat" style="border-left:2px solid rgba(255,255,255,0.1); position:relative; min-width:160px;">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+          <span style="font-family:'Bebas Neue',sans-serif; font-size:18px; color:rgba(255,255,255,0.5); letter-spacing:2px;">KADDU</span>
+          <span style="font-size:9px; background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.4); padding:2px 8px; border-radius:20px; letter-spacing:1px; text-transform:uppercase;">Bientôt</span>
+        </div>
+        <div id="kaddu-value" style="font-size:11px; color:rgba(255,255,255,0.25); letter-spacing:0.5px; line-height:1.6;">
+          · · · · · · · · · · · · · · · ·<br>
+          Résultats du sondage<br>
+          à paraître prochainement
+        </div>
       </div>
     </div>
   </div>
@@ -615,11 +773,11 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
   <div>
     <span class="section-label">L'origine du projet</span>
     <h2 class="section-title" style="color:#fff">Ce que<br>cette nuit<br>a coûté.</h2>
-    <p class="section-body">Une enfant de 12 ans. Encore vivante au moment où son frère la découvre. Il compose le 17 — pas de réponse. Le 18. Les premiers hôpitaux refusent de la recevoir. Elle rend son dernier souffle sur la route du troisième établissement.</p>
-    <p class="section-body" style="margin-top:16px">Ce drame aurait pu être évité. Un numéro unique. Un opérateur. Un dispatch. Des secours envoyés en moins de 3 minutes.</p>
+    <p class="section-body">Une enfant de 12 ans. Encore vivante au moment où son frère la découvre. Il compose le 17 — pas de réponse. Le 18. Pareil. Les premiers hôpitaux refusent de la recevoir. Elle rend son dernier souffle sur la route d'un autre établissement.</p>
+    <p class="section-body" style="margin-top:16px">Ce drame aurait pu être évité avec un numéro unique. Un opérateur disponible. Un dispatch rapide. Des secours envoyés en moins de 3 minutes.</p>
   </div>
   <div class="drame-quote">
-    <p>« Ce soir-là, mon ami ne savait pas quoi composer. Personne ne le sait vraiment. C'est pour ça que 221 doit exister. »</p>
+    <p>« Ce soir-là, mon ami ne savait pas exactement quel numéro composer. Personne ne le sait vraiment dans pareille situation. De plus, personne n'a répondu à l'appel d'urgence. Enfin, encore en vie, la petite n'a pas été reçue dans les premiers hôpitaux. C'est pour ça que 221 doit exister. »</p>
     <cite>— Amadou Abdou Thiaw, porteur du projet</cite>
   </div>
 </section>
@@ -810,234 +968,160 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 <section class="ecosysteme-section" id="ecosysteme">
   <span class="section-label" style="display:block;text-align:center">Architecture institutionnelle</span>
   <h2 class="section-title" style="text-align:center">L'écosystème<br>du CNRD-221.</h2>
-  <p class="section-body" style="margin:0 auto 16px;text-align:center">Le Centre National de Réception et de Dispatch coordonne en temps réel l'ensemble des acteurs de l'urgence au Sénégal.</p>
-  <p style="font-size:13px;color:var(--gris);text-align:center;margin-bottom:56px;letter-spacing:0.3px">
-    <span style="display:inline-flex;align-items:center;gap:6px;margin-right:20px"><span style="width:10px;height:10px;border-radius:50%;background:#16a34a;display:inline-block"></span>Intégration confirmée</span>
-    <span style="display:inline-flex;align-items:center;gap:6px;margin-right:20px"><span style="width:10px;height:10px;border-radius:50%;background:var(--or);display:inline-block"></span>Intégration prévue</span>
-    <span style="display:inline-flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:var(--gris-clair);border:1px solid #ccc;display:inline-block"></span>En discussion</span>
-  </p>
+  <p class="section-body" style="margin:0 auto 16px;text-align:center">Le Centre National de Réception et de Dispatch coordonne en temps réel l'ensemble des acteurs de l'urgence au Sénégal — sécurité, santé, numérique, environnement, télécoms et partenaires internationaux.</p>
+  <div style="max-width:700px;margin:0 auto 48px;text-align:center;background:rgba(0,102,51,0.07);border:1px solid rgba(0,102,51,0.2);border-radius:10px;padding:14px 24px;">
+    <p style="font-size:13px;color:var(--gris);line-height:1.6">
+      <strong style="color:var(--vert)">ℹ️ Note :</strong> Les acteurs listés ci-dessous sont des <strong>partenaires pressentis</strong> dans le cadre de la conception du CNRD-221. Leur inclusion dans cet écosystème reflète leur rôle naturel dans le dispositif d'urgence national, et non un engagement formel de leur part à ce stade.
+    </p>
+  </div>
 
   <!-- Famille 1 : Sécurité & Secours -->
   <div class="eco-famille">
     <div class="eco-famille-label">🚨 Sécurité & Secours</div>
     <div class="eco-grid">
-      <div class="eco-card confirmed">
-        <div class="eco-emoji">🚒</div>
-        <div class="eco-name">BNSP</div>
-        <div class="eco-role">Sapeurs-Pompiers Nationaux</div>
-        <div class="eco-num">18</div>
-        <div class="eco-dot confirmed-dot"></div>
-      </div>
-      <div class="eco-card confirmed">
-        <div class="eco-emoji">🏥</div>
-        <div class="eco-name">SAMU National</div>
-        <div class="eco-role">Urgences Médicales</div>
-        <div class="eco-num">1515</div>
-        <div class="eco-dot confirmed-dot"></div>
-      </div>
-      <div class="eco-card confirmed">
-        <div class="eco-emoji">👮</div>
-        <div class="eco-name">Police Nationale</div>
-        <div class="eco-role">Sécurité Urbaine</div>
-        <div class="eco-num">17</div>
-        <div class="eco-dot confirmed-dot"></div>
-      </div>
-      <div class="eco-card confirmed">
-        <div class="eco-emoji">🪖</div>
-        <div class="eco-name">Gendarmerie Nationale</div>
-        <div class="eco-role">Sécurité Territoriale</div>
-        <div class="eco-num">800 00 20 20</div>
-        <div class="eco-dot confirmed-dot"></div>
-      </div>
-      <div class="eco-card planned">
-        <div class="eco-emoji">⚓</div>
-        <div class="eco-name">Marine Nationale</div>
-        <div class="eco-role">Secours en Mer</div>
-        <div class="eco-num">Intégration prévue</div>
-        <div class="eco-dot planned-dot"></div>
-      </div>
-      <div class="eco-card planned">
-        <div class="eco-emoji">✝️</div>
-        <div class="eco-name">Croix-Rouge Sénégalaise</div>
-        <div class="eco-role">Premiers Secours Communautaires</div>
-        <div class="eco-num">Intégration prévue</div>
-        <div class="eco-dot planned-dot"></div>
-      </div>
+      <div class="eco-card"><div class="eco-emoji">🚒</div><div class="eco-name">BNSP</div><div class="eco-role">Brigade Nationale des Sapeurs-Pompiers</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏥</div><div class="eco-name">SAMU National</div><div class="eco-role">Urgences Médicales · 1515</div></div>
+      <div class="eco-card"><div class="eco-emoji">👮</div><div class="eco-name">Police Nationale</div><div class="eco-role">Sécurité Urbaine · 17</div></div>
+      <div class="eco-card"><div class="eco-emoji">🪖</div><div class="eco-name">Gendarmerie Nationale</div><div class="eco-role">Sécurité Territoriale · 800 00 20 20</div></div>
+      <div class="eco-card"><div class="eco-emoji">⚔️</div><div class="eco-name">Forces Armées</div><div class="eco-role">Appui & Intervention en cas de crise majeure</div></div>
+      <div class="eco-card"><div class="eco-emoji">⚓</div><div class="eco-name">Marine Nationale</div><div class="eco-role">Secours en Mer & Zones Fluviales</div></div>
+      <div class="eco-card"><div class="eco-emoji">✝️</div><div class="eco-name">Croix-Rouge Sénégalaise</div><div class="eco-role">Premiers Secours & Aide Humanitaire</div></div>
+      <div class="eco-card"><div class="eco-emoji">🛡️</div><div class="eco-name">Protection Civile</div><div class="eco-role">Coordination des Catastrophes Majeures</div></div>
     </div>
   </div>
 
-  <!-- Famille 2 : Santé -->
+  <!-- Famille 2 : Santé Publique -->
   <div class="eco-famille">
-    <div class="eco-famille-label">🏥 Santé Publique</div>
+    <div class="eco-famille-label">🏥 Santé Publique — Hôpitaux & Centres de Santé</div>
     <div class="eco-grid">
-      <div class="eco-card confirmed">
-        <div class="eco-emoji">🏛</div>
-        <div class="eco-name">CHNU de Fann</div>
-        <div class="eco-role">CHU de référence, Dakar</div>
-        <div class="eco-num">Intégration confirmée</div>
-        <div class="eco-dot confirmed-dot"></div>
-      </div>
-      <div class="eco-card confirmed">
-        <div class="eco-emoji">🏛</div>
-        <div class="eco-name">Hôpital Le Dantec</div>
-        <div class="eco-role">CHU Urgences adultes</div>
-        <div class="eco-num">Intégration confirmée</div>
-        <div class="eco-dot confirmed-dot"></div>
-      </div>
-      <div class="eco-card planned">
-        <div class="eco-emoji">🏛</div>
-        <div class="eco-name">Hôpital Principal</div>
-        <div class="eco-role">CHU Dakar — Traumatologie</div>
-        <div class="eco-num">Intégration prévue</div>
-        <div class="eco-dot planned-dot"></div>
-      </div>
-      <div class="eco-card planned">
-        <div class="eco-emoji">🔬</div>
-        <div class="eco-name">COUS</div>
-        <div class="eco-role">Urgences Sanitaires Nationales</div>
-        <div class="eco-num">Intégration prévue</div>
-        <div class="eco-dot planned-dot"></div>
-      </div>
-      <div class="eco-card discussion">
-        <div class="eco-emoji">🏥</div>
-        <div class="eco-name">Cliniques Privées</div>
-        <div class="eco-role">Réseau de soins secondaires</div>
-        <div class="eco-num">En discussion</div>
-        <div class="eco-dot discussion-dot"></div>
-      </div>
-      <div class="eco-card planned">
-        <div class="eco-emoji">💊</div>
-        <div class="eco-name">Pharmacies de Garde</div>
-        <div class="eco-role">Réseau 24h/24 géolocalisé</div>
-        <div class="eco-num">Intégration prévue</div>
-        <div class="eco-dot planned-dot"></div>
-      </div>
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">CHNU de Fann</div><div class="eco-role">CHU de référence — Neurologie & spécialités, Dakar</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">Hôpital Le Dantec</div><div class="eco-role">CHU — Urgences adultes & chirurgie générale</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">Hôpital Principal de Dakar</div><div class="eco-role">CHU — Traumatologie, chirurgie & réanimation</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">Hôpital Général de Grand Yoff</div><div class="eco-role">HOGGY — Urgences & médecine interne</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">Hôpital Albert Royer</div><div class="eco-role">Pédiatrie & urgences enfants, Dakar</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">Hôpital Roi Baudouin</div><div class="eco-role">Maternité & gynécologie-obstétrique, Guédiawaye</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">Hôpital de la Paix</div><div class="eco-role">CHU — Ziguinchor, Sud du Sénégal</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">Hôpital Régional de Thiès</div><div class="eco-role">Centre régional d'urgences — Région de Thiès</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">Hôpital Régional de Saint-Louis</div><div class="eco-role">Centre régional d'urgences — Nord Sénégal</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">Hôpital Régional de Kaolack</div><div class="eco-role">Centre régional — Sine-Saloum</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">Hôpital Régional de Tambacounda</div><div class="eco-role">Centre régional — Est du Sénégal</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">Hôpital Régional de Louga</div><div class="eco-role">Centre régional — Zone Nord</div></div>
+      <div class="eco-card"><div class="eco-emoji">🔬</div><div class="eco-name">COUS</div><div class="eco-role">Cellule des Opérations d'Urgence Sanitaire</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏥</div><div class="eco-name">Centres de Santé</div><div class="eco-role">Réseau national de 14 régions — Premiers soins de proximité</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏥</div><div class="eco-name">Cliniques Privées</div><div class="eco-role">Réseau de soins secondaires agréé 221</div></div>
+      <div class="eco-card"><div class="eco-emoji">💊</div><div class="eco-name">Pharmacies de Garde</div><div class="eco-role">Réseau 24h/24 géolocalisé sur l'app 221</div></div>
+      <div class="eco-card"><div class="eco-emoji">🚑</div><div class="eco-name">SUMA Assistance</div><div class="eco-role">Réseau ambulancier privé — Dakar & régions</div></div>
+      <div class="eco-card"><div class="eco-emoji">🩺</div><div class="eco-name">Volontaires 221</div><div class="eco-role">Réseau citoyen de premiers secours certifiés PSC1</div></div>
     </div>
   </div>
 
   <!-- Famille 3 : Gouvernance & Régulation -->
   <div class="eco-famille">
-    <div class="eco-famille-label">🏛 Gouvernance & Régulation</div>
+    <div class="eco-famille-label">🏛️ Gouvernance, Régulation & Numérique</div>
     <div class="eco-grid">
-      <div class="eco-card confirmed">
-        <div class="eco-emoji">📡</div>
-        <div class="eco-name">ARTP</div>
-        <div class="eco-role">Régulation — Ouverture numéro 221</div>
-        <div class="eco-num">Lettre N°00879 · Mars 2026</div>
-        <div class="eco-dot confirmed-dot"></div>
-      </div>
-      <div class="eco-card planned">
-        <div class="eco-emoji">🏢</div>
-        <div class="eco-name">Ministère de l'Intérieur</div>
-        <div class="eco-role">Autorité de tutelle du CNRD-221</div>
-        <div class="eco-num">Décision attendue</div>
-        <div class="eco-dot planned-dot"></div>
-      </div>
-      <div class="eco-card planned">
-        <div class="eco-emoji">🏢</div>
-        <div class="eco-name">Ministère de la Santé</div>
-        <div class="eco-role">Coordination médicale</div>
-        <div class="eco-num">En attente</div>
-        <div class="eco-dot planned-dot"></div>
-      </div>
-      <div class="eco-card planned">
-        <div class="eco-emoji">🏢</div>
-        <div class="eco-name">Ministère des Télécoms</div>
-        <div class="eco-role">Infrastructure numérique</div>
-        <div class="eco-num">Audience accordée</div>
-        <div class="eco-dot planned-dot"></div>
-      </div>
-      <div class="eco-card planned">
-        <div class="eco-emoji">🌦</div>
-        <div class="eco-name">ANACIM</div>
-        <div class="eco-role">Alerte Météo Précoce</div>
-        <div class="eco-num">Intégration prévue</div>
-        <div class="eco-dot planned-dot"></div>
-      </div>
-      <div class="eco-card planned">
-        <div class="eco-emoji">🛡</div>
-        <div class="eco-name">Protection Civile</div>
-        <div class="eco-role">Coordination catastrophes</div>
-        <div class="eco-num">Intégration prévue</div>
-        <div class="eco-dot planned-dot"></div>
-      </div>
+      <div class="eco-card"><div class="eco-emoji">📡</div><div class="eco-name">ARTP</div><div class="eco-role">Régulation — Ouverture numéro court 221</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏢</div><div class="eco-name">Min. de l'Intérieur</div><div class="eco-role">Autorité de tutelle du CNRD-221</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏢</div><div class="eco-name">Min. de la Santé</div><div class="eco-role">Coordination médicale nationale</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏢</div><div class="eco-name">Min. des Télécoms</div><div class="eco-role">Infrastructure & numérique</div></div>
+      <div class="eco-card"><div class="eco-emoji">⚔️</div><div class="eco-name">Min. des Forces Armées</div><div class="eco-role">Coordination défense & secours militaires</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏢</div><div class="eco-name">Min. des Finances</div><div class="eco-role">Financement & budget du dispositif</div></div>
+      <div class="eco-card"><div class="eco-emoji">💻</div><div class="eco-name">SENUM SA</div><div class="eco-role">Sénégal Numérique — Infrastructure IT de l'État</div></div>
+      <div class="eco-card"><div class="eco-emoji">🌦️</div><div class="eco-name">ANACIM</div><div class="eco-role">Agence Nationale de l'Aviation Civile & Météo</div></div>
+      <div class="eco-card"><div class="eco-emoji">🌊</div><div class="eco-name">DGPI</div><div class="eco-role">Direction Gestion & Prévention des Inondations</div></div>
+      <div class="eco-card"><div class="eco-emoji">🗺️</div><div class="eco-name">Préfectures & Mairies</div><div class="eco-role">Relais territorial de proximité</div></div>
     </div>
   </div>
 
-  <!-- Famille 4 : Télécoms -->
+  <!-- Famille 4 : Environnement, Eau & Infrastructures -->
+  <div class="eco-famille">
+    <div class="eco-famille-label">🌿 Environnement, Eau & Infrastructures Critiques</div>
+    <div class="eco-grid">
+      <div class="eco-card"><div class="eco-emoji">🌳</div><div class="eco-name">Eaux & Forêts</div><div class="eco-role">Lutte contre les feux de forêt & protection environnementale</div></div>
+      <div class="eco-card"><div class="eco-emoji">🌊</div><div class="eco-name">ONAS</div><div class="eco-role">Office Nat. Assainissement — Inondations & réseaux</div></div>
+      <div class="eco-card"><div class="eco-emoji">💧</div><div class="eco-name">SONES</div><div class="eco-role">Société Nationale des Eaux — Patrimoine hydraulique urbain</div></div>
+      <div class="eco-card"><div class="eco-emoji">🚰</div><div class="eco-name">SEN'EAU</div><div class="eco-role">Exploitation & distribution eau potable — zones urbaines & périurbaines</div></div>
+      <div class="eco-card"><div class="eco-emoji">⚡</div><div class="eco-name">SENELEC</div><div class="eco-role">Électricité — Gestion des incidents sur le réseau</div></div>
+      <div class="eco-card"><div class="eco-emoji">🚢</div><div class="eco-name">Port Autonome de Dakar</div><div class="eco-role">Coordination urgences portuaires & maritimes</div></div>
+      <div class="eco-card"><div class="eco-emoji">✈️</div><div class="eco-name">AIBD SA</div><div class="eco-role">Coordination urgences aéroportuaires</div></div>
+      <div class="eco-card"><div class="eco-emoji">🛤️</div><div class="eco-name">APIX / Agences routières</div><div class="eco-role">Gestion des accidents sur autoroutes & infrastructures nationales</div></div>
+    </div>
+  </div>
+
+  <!-- Famille 5 : Financement National -->
+  <div class="eco-famille">
+    <div class="eco-famille-label">🏦 Financement & Institutions Nationales</div>
+    <div class="eco-grid">
+      <div class="eco-card"><div class="eco-emoji">🏛️</div><div class="eco-name">CDC</div><div class="eco-role">Caisse des Dépôts & Consignations — Bras financier de l'État · 140 Mds FCFA mobilisés en 2025</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏦</div><div class="eco-name">BNDE</div><div class="eco-role">Banque Nationale de Développement Économique — Financement infrastructures</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏦</div><div class="eco-name">DER / FJ</div><div class="eco-role">Délégation à l'Entrepreneuriat Rapide — Financement tech & innovation</div></div>
+      <div class="eco-card"><div class="eco-emoji">📊</div><div class="eco-name">BCEAO</div><div class="eco-role">Banque Centrale — Supervision financière régionale UEMOA</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏢</div><div class="eco-name">Min. des Finances</div><div class="eco-role">Budget d'État & financement du CNRD-221</div></div>
+      <div class="eco-card"><div class="eco-emoji">🔐</div><div class="eco-name">CDP</div><div class="eco-role">Commission de Protection des Données — Gouvernance données d'urgence & vie privée</div></div>
+    </div>
+  </div>
+
+  <!-- Famille 5 : Opérateurs Télécoms -->
   <div class="eco-famille">
     <div class="eco-famille-label">📶 Opérateurs Télécoms</div>
     <div class="eco-grid">
-      <div class="eco-card confirmed">
-        <div class="eco-emoji">🟠</div>
+      <!-- SONATEL / Orange -->
+      <div class="eco-card">
+        <div class="eco-emoji-custom" style="background:linear-gradient(135deg,#FF6900,#FF8C00)">
+          <span style="font-size:18px;font-weight:900;color:#fff;font-family:'Bebas Neue',sans-serif;letter-spacing:1px">SN</span>
+        </div>
         <div class="eco-name">SONATEL / Orange</div>
-        <div class="eco-role">Acheminement, hébergement, réseau</div>
-        <div class="eco-num">Soutien DG confirmé</div>
-        <div class="eco-dot confirmed-dot"></div>
+        <div class="eco-role">Acheminement, hébergement, réseau — Soutien DG confirmé</div>
       </div>
-      <div class="eco-card planned">
-        <div class="eco-emoji">🔵</div>
-        <div class="eco-name">Free Sénégal</div>
-        <div class="eco-role">Acheminement gratuit du 221</div>
-        <div class="eco-num">Intégration prévue</div>
-        <div class="eco-dot planned-dot"></div>
+      <!-- YAS (ex-Free) — bleu/jaune -->
+      <div class="eco-card">
+        <div class="eco-emoji-custom" style="background:linear-gradient(135deg,#1A73E8,#F9C02A)">
+          <span style="font-size:16px;font-weight:900;color:#fff;font-family:'DM Sans',sans-serif;letter-spacing:1px">YAS</span>
+        </div>
+        <div class="eco-name">YAS Sénégal</div>
+        <div class="eco-role">Acheminement gratuit du 221 — Ex-Free Sénégal (Axian)</div>
       </div>
-      <div class="eco-card planned">
-        <div class="eco-emoji">🔴</div>
+      <!-- Expresso — mauve -->
+      <div class="eco-card">
+        <div class="eco-emoji-custom" style="background:linear-gradient(135deg,#7B2D8B,#A855C8)">
+          <span style="font-size:14px;font-weight:900;color:#fff;font-family:'DM Sans',sans-serif;letter-spacing:0.5px">EXP</span>
+        </div>
         <div class="eco-name">Expresso Sénégal</div>
-        <div class="eco-role">Acheminement gratuit du 221</div>
-        <div class="eco-num">Intégration prévue</div>
-        <div class="eco-dot planned-dot"></div>
+        <div class="eco-role">Acheminement gratuit du 221 — Réseau national</div>
+      </div>
+      <!-- ProMobile — rouge -->
+      <div class="eco-card">
+        <div class="eco-emoji-custom" style="background:linear-gradient(135deg,#CC0000,#FF3333)">
+          <span style="font-size:13px;font-weight:900;color:#fff;font-family:'DM Sans',sans-serif;letter-spacing:0.5px">PRO</span>
+        </div>
+        <div class="eco-name">ProMobile</div>
+        <div class="eco-role">Acheminement gratuit du 221 — MVNO Sénégal</div>
       </div>
     </div>
   </div>
 
-  <!-- Famille 5 : Partenaires internationaux -->
+  <!-- Famille 7 : Partenaires Internationaux & Bailleurs -->
   <div class="eco-famille">
-    <div class="eco-famille-label">🌍 Partenaires Internationaux</div>
+    <div class="eco-famille-label">🌍 Bailleurs & Partenaires Internationaux</div>
     <div class="eco-grid">
-      <div class="eco-card discussion">
-        <div class="eco-emoji">🇫🇷</div>
-        <div class="eco-name">AFD</div>
-        <div class="eco-role">Financement infrastructure</div>
-        <div class="eco-num">En discussion</div>
-        <div class="eco-dot discussion-dot"></div>
-      </div>
-      <div class="eco-card discussion">
-        <div class="eco-emoji">🇪🇺</div>
-        <div class="eco-name">Union Européenne</div>
-        <div class="eco-role">Financement & expertise 112</div>
-        <div class="eco-num">En discussion</div>
-        <div class="eco-dot discussion-dot"></div>
-      </div>
-      <div class="eco-card discussion">
-        <div class="eco-emoji">🌐</div>
-        <div class="eco-name">Banque Mondiale</div>
-        <div class="eco-role">Financement Phase 1</div>
-        <div class="eco-num">En discussion</div>
-        <div class="eco-dot discussion-dot"></div>
-      </div>
-      <div class="eco-card discussion">
-        <div class="eco-emoji">📻</div>
-        <div class="eco-name">UIT</div>
-        <div class="eco-role">Standards & numérotation</div>
-        <div class="eco-num">En discussion</div>
-        <div class="eco-dot discussion-dot"></div>
-      </div>
-      <div class="eco-card discussion">
-        <div class="eco-emoji">🇺🇸</div>
-        <div class="eco-name">USAID</div>
-        <div class="eco-role">Appui technique NG911</div>
-        <div class="eco-num">En discussion</div>
-        <div class="eco-dot discussion-dot"></div>
-      </div>
-      <div class="eco-card discussion">
-        <div class="eco-emoji">🏥</div>
-        <div class="eco-name">OMS</div>
-        <div class="eco-role">Normes urgences sanitaires</div>
-        <div class="eco-num">En discussion</div>
-        <div class="eco-dot discussion-dot"></div>
-      </div>
+      <div class="eco-card"><div class="eco-emoji">🇫🇷</div><div class="eco-name">AFD</div><div class="eco-role">Agence Française de Développement — Financement & expertise</div></div>
+      <div class="eco-card"><div class="eco-emoji">🇪🇺</div><div class="eco-name">Union Européenne</div><div class="eco-role">Financement & expertise 112 européen — FED & programmes régionaux</div></div>
+      <div class="eco-card"><div class="eco-emoji">🌐</div><div class="eco-name">Banque Mondiale</div><div class="eco-role">Financement Phase 1 & appui institutionnel — IDA Sénégal</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏦</div><div class="eco-name">BAD</div><div class="eco-role">Banque Africaine de Développement — Financement infrastructures critiques</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏦</div><div class="eco-name">BEI</div><div class="eco-role">Banque Européenne d'Investissement — Cofinancement projets structurants</div></div>
+      <div class="eco-card"><div class="eco-emoji">📻</div><div class="eco-name">UIT</div><div class="eco-role">Union Internationale des Télécoms — Standards & numérotation d'urgence</div></div>
+      <div class="eco-card"><div class="eco-emoji">🇺🇸</div><div class="eco-name">USAID</div><div class="eco-role">Appui technique — Modèle NG911 américain & formation</div></div>
+      <div class="eco-card"><div class="eco-emoji">🏥</div><div class="eco-name">OMS / WHO</div><div class="eco-role">Normes internationales urgences sanitaires & protocoles médicaux</div></div>
+      <div class="eco-card"><div class="eco-emoji">🌍</div><div class="eco-name">UNICEF</div><div class="eco-role">Protection de l'enfance & urgences pédiatriques</div></div>
+      <div class="eco-card"><div class="eco-emoji">🤝</div><div class="eco-name">CEDEAO</div><div class="eco-role">Harmonisation régionale des numéros d'urgence en Afrique de l'Ouest</div></div>
+      <div class="eco-card"><div class="eco-emoji">🇸🇦</div><div class="eco-name">IsDB / BIsD</div><div class="eco-role">Banque Islamique de Développement — Financement alternatif</div></div>
+      <div class="eco-card"><div class="eco-emoji">🇨🇳</div><div class="eco-name">Eximbank Chine</div><div class="eco-role">Financement infrastructures numériques — Partenariat SENUM</div></div>
+      <div class="eco-card"><div class="eco-emoji">🌐</div><div class="eco-name">PNUD</div><div class="eco-role">Programme des Nations Unies — Développement & résilience</div></div>
+      <div class="eco-card"><div class="eco-emoji">🚨</div><div class="eco-name">OCHA</div><div class="eco-role">Bureau de Coordination des Affaires Humanitaires ONU</div></div>
+      <div class="eco-card"><div class="eco-emoji">🌍</div><div class="eco-name">UA / Commission Africaine</div><div class="eco-role">Cadre panafricain des systèmes d'alerte & d'urgence</div></div>
+    </div>
+  </div>
+
+</section>
     </div>
   </div>
 </section>
@@ -1155,7 +1239,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 <section class="demandes" id="demandes">
   <span class="section-label">Appel aux décideurs</span>
   <h2 class="section-title">Ce que nous<br>demandons.</h2>
-  <p class="section-body" style="margin-bottom:40px">2 666 citoyens ont signé. La mobilisation est là. Il ne manque qu'un signal politique pour que le 221 devienne réalité.</p>
+  <p class="section-body" style="margin-bottom:40px" id="demandes-signataires">4 595 citoyens ont signé. La mobilisation est là. Il ne manque qu'un signal politique pour que le 221 devienne réalité.</p>
 
   <!-- Bloc introductif solennel -->
   <div class="demandes-intro">
@@ -1260,7 +1344,8 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
         <button class="share-btn share-wa" onclick="partager('wa')">📱 WhatsApp</button>
         <button class="share-btn share-tw" onclick="partager('tw')">𝕏 Twitter / X</button>
         <button class="share-btn share-fb" onclick="partager('fb')">Facebook</button>
-        <button class="share-btn share-cp" onclick="partager('cp')">🔗 Copier le lien</button>
+        <button class="share-btn" style="background:#0077B5;color:#fff" onclick="partager('li')">🔗 LinkedIn</button>
+        <button class="share-btn share-cp" onclick="partager('cp')">📋 Copier le lien</button>
       </div>
     </div>
 
@@ -1297,32 +1382,266 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <span class="section-label" style="text-align:center; display:block">Contact</span>
-  <h2 class="section-title">Porteur du projet</h2>
-  <p class="section-body">Pour toute demande institutionnelle, partenariat ou information sur le projet 221.</p>
-  <div class="contact-cards">
-    <div class="contact-card">
-      <div class="ico">👤</div>
-      <h4>PORTEUR DU PROJET</h4>
-      <p>Amadou Abdou THIAW</p>
+<!-- ════════════════════════════════════════════
+     TIMELINE — ÉTAT D'AVANCEMENT
+     ════════════════════════════════════════════ -->
+<section class="timeline-section" id="avancement">
+  <span class="section-label" style="display:block;text-align:center">État d'avancement</span>
+  <h2 class="section-title" style="text-align:center">De la pétition<br>au 221.</h2>
+  <p class="section-body" style="margin:0 auto 64px;text-align:center">Le projet avance. Voici où nous en sommes — et où nous allons.</p>
+
+  <div class="timeline">
+
+    <div class="tl-item done">
+      <div class="tl-dot"><span>✓</span></div>
+      <div class="tl-content">
+        <div class="tl-date">2025 — 2026</div>
+        <h3 class="tl-title">Conception & dossier technique</h3>
+        <p class="tl-desc">Dossier technique complet (v9), mémoire descriptif rédigé, budget documenté (14,3 Mds FCFA), KPI framework, flows d'urgence, application bêta multilangue déployée. La propriété intellectuelle du projet est en cours de sécurisation par les voies appropriées.</p>
+        <div class="tl-tags">
+          <span class="tl-tag done-tag">✓ Dossier v9</span>
+          <span class="tl-tag done-tag">✓ App bêta en ligne</span>
+          <span class="tl-tag done-tag">✓ Propriété intellectuelle sécurisée</span>
+        </div>
+      </div>
     </div>
-    <div class="contact-card">
-      <div class="ico">📞</div>
-      <h4>TÉLÉPHONE</h4>
-      <p>78 589 89 97</p>
+
+    <div class="tl-item done">
+      <div class="tl-dot"><span>✓</span></div>
+      <div class="tl-content">
+        <div class="tl-date">Juin — Juillet 2026</div>
+        <h3 class="tl-title">Mobilisation citoyenne</h3>
+        <p class="tl-desc">Lancement de la pétition Change.org, campagne LinkedIn (3 852 impressions, ~6% d'engagement), démarchage médias, identification de partenaires stratégiques.</p>
+        <div class="tl-tags">
+          <span class="tl-tag done-tag">✓ +4 595 signatures</span>
+          <span class="tl-tag done-tag">✓ Score 10/10 Change.org</span>
+          <span class="tl-tag done-tag">✓ 402 partages</span>
+        </div>
+      </div>
     </div>
-    <div class="contact-card">
-      <div class="ico">📍</div>
-      <h4>LOCALISATION</h4>
-      <p>Dakar, Sénégal</p>
+
+    <div class="tl-item active">
+      <div class="tl-dot"><span>→</span></div>
+      <div class="tl-content">
+        <div class="tl-date">En cours — 2026</div>
+        <h3 class="tl-title">Lobbying institutionnel & médias</h3>
+        <p class="tl-desc">Contacts initiés avec plusieurs institutions clés : SONATEL, Ministère des Forces Armées et l'ARTP. Démarchage en cours auprès d'autres institutions, bailleurs et de certains médias comme TFM, RFM, Walf TV, DTV. Objectif : audience officielle et couverture médiatique nationale.</p>
+        <div class="tl-tags">
+          <span class="tl-tag done-tag">✓ SONATEL · MFA · ARTP</span>
+          <span class="tl-tag active-tag">⏳ Audience Min. de l'Intérieur</span>
+          <span class="tl-tag active-tag">⏳ Couverture médias nationaux</span>
+          <span class="tl-tag active-tag">⏳ 5 000 signatures</span>
+        </div>
+      </div>
     </div>
-    <div class="contact-card">
-      <div class="ico">📱</div>
-      <h4>APPLICATION BÊTA</h4>
-      <p><a href="https://thiawamadou-zoo.github.io/221/" target="_blank" style="color:var(--vert)">Tester maintenant →</a></p>
+
+    <div class="tl-item pending">
+      <div class="tl-dot"><span>4</span></div>
+      <div class="tl-content">
+        <div class="tl-date">2026 — T3/T4</div>
+        <h3 class="tl-title">Validation politique & Comité Interministériel</h3>
+        <p class="tl-desc">Validation officielle du 221 par le Président de la République. Constitution du Comité Interministériel (Intérieur, Santé, Télécoms, Finances). Engagement des bailleurs internationaux.</p>
+        <div class="tl-tags">
+          <span class="tl-tag pending-tag">Décret présidentiel</span>
+          <span class="tl-tag pending-tag">Comité Interministériel</span>
+          <span class="tl-tag pending-tag">Engager les bailleurs internationaux</span>
+          <span class="tl-tag pending-tag">Financement Phase 1</span>
+        </div>
+      </div>
     </div>
+
+    <div class="tl-item pending">
+      <div class="tl-dot"><span>5</span></div>
+      <div class="tl-content">
+        <div class="tl-date">2027 — 6 mois</div>
+        <h3 class="tl-title">Phase 1 — Dakar & grandes villes</h3>
+        <p class="tl-desc">Déploiement du CNRD-221 à Dakar, Thiès et Saint-Louis. Centre de dispatch opérationnel avec redondance. Intégration des 4 corps d'urgence. Formation des opérateurs.</p>
+        <div class="tl-tags">
+          <span class="tl-tag pending-tag">CNRD-221 opérationnel</span>
+          <span class="tl-tag pending-tag">Dakar · Thiès · Saint-Louis</span>
+          <span class="tl-tag pending-tag">Délai cible &lt; 8 min</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item pending">
+      <div class="tl-dot"><span>6</span></div>
+      <div class="tl-content">
+        <div class="tl-date">2027 — 2028</div>
+        <h3 class="tl-title">Couverture nationale — 14 régions</h3>
+        <p class="tl-desc">Extension progressive aux 14 régions du Sénégal. Intégration du réseau de Volontaires 221. Application mobile en 5 langues. Objectif : zéro zone non couverte.</p>
+        <div class="tl-tags">
+          <span class="tl-tag pending-tag">14 régions couvertes</span>
+          <span class="tl-tag pending-tag">23M abonnés protégés</span>
+          <span class="tl-tag pending-tag">Modèle africain de référence</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     FAQ
+     ════════════════════════════════════════════ -->
+<section class="faq-section" id="faq">
+  <span class="section-label" style="display:block;text-align:center">Questions fréquentes</span>
+  <h2 class="section-title" style="text-align:center">Vos questions.<br>Nos réponses.</h2>
+  <p class="section-body" style="margin:0 auto 56px;text-align:center">Tout ce que vous devez savoir sur le Projet 221.</p>
+
+  <div class="faq-list" style="max-width:800px;margin:0 auto">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Pourquoi le numéro 221 ? C'est l'indicatif téléphonique du Sénégal.</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>C'est précisément pour ça que nous l'avons choisi. Le 221, c'est l'identité du Sénégal — tout le monde le connaît, même sous le choc. En cas d'urgence, le cerveau humain a besoin d'un repère simple et mémorable. Par ailleurs, techniquement, l'ARTP peut ouvrir un numéro court de 3 chiffres indépendamment de l'indicatif international. Le 112 en Europe fonctionne de la même manière dans des dizaines de pays. Il ne devrait pas y avoir de conflit technique. Nous travaillerons avec l'ARTP pour mettre tout cela en place.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Quelle est la différence avec SenAlerte ?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Le Projet 221 est une initiative citoyenne indépendante dont les premières réflexions remontent à <strong>2015</strong> — bien avant que d'autres plateformes similaires n'émergent au Sénégal. Il est fondé sur un dossier technique complet, un budget documenté et une mobilisation citoyenne réelle (+4 595 signatures). Notre approche est claire : nous ne créons pas une couche supplémentaire, nous proposons un numéro unique qui <strong>unifie et coordonne</strong> les services existants (17, 18, 1515) via un Centre National de Dispatch sous la tutelle du Ministère de l'Intérieur.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Appeler le 221 coûtera-t-il quelque chose ?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Dans sa phase de lancement, un débit symbolique de <strong>25 FCFA</strong> sera appliqué — non pas comme barrière, mais comme signal dissuasif contre les appels fantaisistes ou non urgents qui saturent les lignes de secours et coûtent des vies. Ce montant, prélevé à la prochaine recharge si nécessaire (lorsque le compteur crédit de l'appelant est insuffisant), garantit que chaque appel est sérieux. Une fois la population suffisamment sensibilisée aux bons usages du 221, l'objectif est de rendre l'appel entièrement gratuit pour tous, depuis tout téléphone, sans condition.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Le 221 remplace-t-il le 17, le 18 et le 1515 ?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Non, il les coordonne. La Police Nationale, la Gendarmerie, les Sapeurs-Pompiers et le SAMU accomplissent un travail remarquable chaque jour, avec des hommes et des femmes dévoués et une expertise opérationnelle précieuse. Le 221 n'a pas vocation à les remplacer — il vient leur donner un outil de coordination à la hauteur de leur engagement. Le 17, le 18 et le 1515 continueront d'exister et de fonctionner. Le 221 est une porte d'entrée unique derrière laquelle un opérateur qualifié oriente et dispatche vers le bon service en temps réel. Le citoyen n'a plus à choisir — le système décide pour lui en moins de 60 secondes, selon la nature de l'urgence et les ressources disponibles.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Des pays africains ont-ils déjà un numéro d'urgence unique ?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Oui. Le Kenya a le <strong>999</strong>, le Rwanda le <strong>112</strong> avec géolocalisation et dispatch centralisé — cité en exemple mondial. Le Ghana a le <strong>999</strong>, le Maroc le <strong>15</strong> et le <strong>150</strong> pour les urgences médicales, l'Afrique du Sud le <strong>112</strong>. La Côte d'Ivoire travaille sur son propre système. Le Sénégal, qui se positionne comme hub technologique de l'Afrique de l'Ouest, ne peut pas rester en dehors de ce mouvement continental.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Quel est le budget et qui va financer le projet ?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Le budget total est de <strong>14,3 milliards FCFA sur 24 mois</strong> (CAPEX + OPEX). Le financement envisagé se répartit ainsi : État du Sénégal 55%, partenaires privés 18%, bailleurs 23%, recettes propres 4%. Pour mettre en perspective : c'est l'équivalent de 3 à 5 kilomètres d'autoroute. Pour ce prix-là, 23 millions de Sénégalais sont protégés pendant des décennies. Nous invitons tout bailleur national ou international — institutions multilatérales, fonds de développement, partenaires privés — à rejoindre le projet et à contribuer à faire du Sénégal un modèle africain de sécurité civile.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Comment puis-je aider au-delà de la signature ?</span>
+        <span class="faq-arrow">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Plusieurs façons : <strong>(1)</strong> Partagez la pétition sur
+          <a href="https://wa.me/?text=Je%20viens%20de%20signer%20la%20p%C3%A9tition%20pour%20le%20221%20https%3A%2F%2Fchng.it%2FgtwT6HksCt%20%23221S%C3%A9n%C3%A9gal" target="_blank" style="color:var(--vert);font-weight:600">WhatsApp</a>,
+          <a href="https://twitter.com/intent/tweet?text=Je%20soutiens%20le%20Projet%20221%20%E2%80%94%20num%C3%A9ro%20d%27urgence%20unique%20pour%20le%20S%C3%A9n%C3%A9gal.%20Signez%20%21%20https%3A%2F%2Fchng.it%2FgtwT6HksCt%20%23221S%C3%A9n%C3%A9gal" target="_blank" style="color:var(--vert);font-weight:600">X / Twitter</a>,
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fchng.it%2FgtwT6HksCt" target="_blank" style="color:var(--vert);font-weight:600">Facebook</a> ou
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fchng.it%2FgtwT6HksCt" target="_blank" style="color:var(--vert);font-weight:600">LinkedIn</a> — chaque partage touche en moyenne 150 personnes.
+          <strong>(2)</strong> Interpellez directement vos élus et représentants.
+          <strong>(3)</strong> Si vous êtes journaliste, institutionnel ou bailleur, <a href="mailto:thiaw.amadou@gmail.com" style="color:var(--vert);font-weight:600">contactez-nous</a>.
+          <strong>(4)</strong> Si vous êtes formé aux gestes de premiers secours (PSC1), inscrivez-vous comme Volontaire 221 via <a href="https://thiawamadou-zoo.github.io/221/" target="_blank" style="color:var(--vert);font-weight:600">l'application bêta</a>.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     À PROPOS & CONTACT
+     ════════════════════════════════════════════ -->
+<section class="apropos-section" id="contact">
+  <div class="apropos-inner">
+
+    <!-- Profil porteur -->
+    <div class="apropos-profil">
+      <span class="section-label">Porteur du projet</span>
+      <h2 class="section-title">Amadou Abdou<br>THIAW.</h2>
+
+      <div class="apropos-bio">
+        <p>Ingénieur en réseaux & systèmes et data analyst, je travaille à <strong>SONATEL SA</strong> depuis plus de 10 ans, où j'occupe le poste de <strong>Chef du Service Pilotage de la Performance</strong> à la Direction de l'Expérience Client. Mon quotidien : gouvernance de la performance, analyse des données, amélioration continue.</p>
+        <p style="margin-top:12px">Ancien boy-scout, j'ai toujours eu à cœur de servir. C'est dans cet esprit que je porte le Projet 221 — à titre entièrement bénévole, en dehors de mes responsabilités professionnelles — avec la conviction que les compétences techniques ont une responsabilité citoyenne.</p>
+        <p style="margin-top:12px">Un dossier solide, une application déjà déployée, une pétition qui progresse. Il ne manque qu'une décision politique.</p>
+      </div>
+
+      <div class="apropos-badges">
+        <span class="apropos-badge">🏅 COPC CX Implementation Leader</span>
+        <span class="apropos-badge">📊 Green Belt Six Sigma</span>
+        <span class="apropos-badge">💼 10 ans SONATEL</span>
+        <span class="apropos-badge">🎓 Master Management de Projets — ISM Dakar</span>
+        <span class="apropos-badge">🌐 Master Administration Réseaux & Systèmes — ISM Dakar</span>
+        <span class="apropos-badge">⚜️ Ancien Boy-Scout</span>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="apropos-contact">
+      <div class="contact-block">
+        <h3>Nous contacter</h3>
+        <p>Pour toute demande institutionnelle, partenariat, interview ou information sur le Projet 221.</p>
+
+        <div class="contact-items">
+          <a href="tel:+221785898997" class="contact-item">
+            <div class="ci-icon">📞</div>
+            <div class="ci-text">
+              <span class="ci-label">Téléphone</span>
+              <span class="ci-value">+221 78 589 89 97</span>
+            </div>
+          </a>
+          <a href="mailto:thiaw.amadou@gmail.com" class="contact-item">
+            <div class="ci-icon">📧</div>
+            <div class="ci-text">
+              <span class="ci-label">Email</span>
+              <span class="ci-value">thiaw.amadou@gmail.com</span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/amadouabdouthiaw" target="_blank" class="contact-item">
+            <div class="ci-icon">🔗</div>
+            <div class="ci-text">
+              <span class="ci-label">LinkedIn</span>
+              <span class="ci-value">Amadou Abdou THIAW</span>
+            </div>
+          </a>
+          <div class="contact-item">
+            <div class="ci-icon">📍</div>
+            <div class="ci-text">
+              <span class="ci-label">Localisation</span>
+              <span class="ci-value">SICAP Baobabs, Rue BB-96 · Dakar, Sénégal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-ctas">
+          <a href="https://chng.it/gtwT6HksCt" target="_blank" class="contact-cta-main">✊ Signer la pétition</a>
+          <a href="https://thiawamadou-zoo.github.io/221/" target="_blank" class="contact-cta-sec">📱 Tester l'app</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1338,22 +1657,38 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 </footer>
 
 <!-- BOUTON ADMIN (discret) -->
-<button class="admin-trigger" id="admin-trigger" onclick="toggleAdmin()" title="Admin">⚙</button>
+<button class="admin-trigger" id="admin-trigger" onclick="toggleAdmin()" title="Mise à jour des chiffres">⚙</button>
 
 <!-- PANNEAU ADMIN -->
 <div class="admin-panel" id="admin-panel">
-  <h4>🔒 Panneau Admin · Projet 221</h4>
+  <h4>📊 Mise à jour des chiffres · Projet 221</h4>
   <div id="admin-auth">
     <label>Mot de passe</label>
     <input type="password" id="admin-pwd" placeholder="••••••••" onkeydown="if(event.key==='Enter')authAdmin()">
     <button class="admin-btn" onclick="authAdmin()">Accéder</button>
   </div>
   <div id="admin-controls" style="display:none">
-    <label>Nouveau compteur de signatures</label>
-    <input type="number" id="admin-count" min="0" max="100000" placeholder="ex: 3 200">
-    <label>Objectif (barre de progression)</label>
+    <p style="font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:4px;line-height:1.5">
+      Tous les chiffres du site seront mis à jour en un clic.
+    </p>
+
+    <label>🖊 Signatures Change.org</label>
+    <input type="number" id="admin-count" min="0" max="100000" placeholder="ex: 4595">
+
+    <label>🎯 Objectif (barre de progression)</label>
     <input type="number" id="admin-goal" min="1000" max="100000" placeholder="ex: 5000">
-    <button class="admin-btn" onclick="applyAdmin()">✓ Mettre à jour</button>
+
+    <label>🗳 Résultats Kaddu <span style="color:rgba(255,255,255,0.3);font-weight:400">(optionnel)</span></label>
+    <input type="number" id="admin-kaddu" min="0" placeholder="Nb de participants / votes">
+
+    <div style="margin-top:20px;padding:12px;background:rgba(255,255,255,0.04);border-radius:8px;font-size:11px;color:rgba(255,255,255,0.35);line-height:1.6">
+      Champs mis à jour :<br>
+      · Hero · Compteur pétition · Barre de progression<br>
+      · Tag timeline · FAQ Q2 · "Ce que nous demandons"<br>
+      · Bloc Kaddu
+    </div>
+
+    <button class="admin-btn" onclick="applyAdmin()">✓ Tout mettre à jour</button>
     <button class="admin-btn-close" onclick="toggleAdmin()">Fermer</button>
   </div>
 </div>
@@ -1362,10 +1697,10 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 
 <script>
 // ── Compteur initialisé à 2 666 (Change.org · juillet 2026) ──
-let sigCount = 2967;
+let sigCount = 4595;
 
 function animCount(target, el) {
-  let current = Math.max(0, target - 80);
+  let current = Math.max(0, target - 60);
   const step = Math.ceil((target - current) / 50);
   const interval = setInterval(() => {
     current = Math.min(current + step, target);
@@ -1411,6 +1746,7 @@ function partager(reseau) {
     wa: 'https://wa.me/?text=' + msg,
     tw: 'https://twitter.com/intent/tweet?text=' + msg,
     fb: 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url),
+    li: 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url),
     cp: null
   };
   if (reseau === 'cp') {
@@ -1444,6 +1780,22 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 updateClock();
+
+// ── FAQ ──────────────────────────────────────────────────
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const answer = item.querySelector('.faq-a');
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(b => {
+    b.classList.remove('open');
+    b.parentElement.querySelector('.faq-a').classList.remove('open');
+  });
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+
 function toggleMenu() {
   const burger = document.getElementById('nav-burger');
   const menu = document.getElementById('nav-mobile');
@@ -1460,6 +1812,17 @@ function closeMenu() {
 // ── PANNEAU ADMIN ─────────────────────────────────────────
 const ADMIN_PWD = '221urgence';
 let adminGoal = parseInt(localStorage.getItem('adminGoal') || '5000');
+
+// Objectifs progressifs : 5 000 puis 10 000
+function getActiveGoal(n) {
+  if (n < 5000) return 5000;
+  return 10000;
+}
+
+function getGoalLabel(n) {
+  const goal = getActiveGoal(n);
+  return 'signataires · objectif ' + goal.toLocaleString('fr-FR');
+}
 
 // Charger compteur sauvegardé si présent
 (function() {
@@ -1496,37 +1859,74 @@ function authAdmin() {
 }
 
 function applyAdmin() {
+  const pwd = document.getElementById('admin-pwd-check')?.value || 'ok';
   const newCount = parseInt(document.getElementById('admin-count').value);
   const newGoal  = parseInt(document.getElementById('admin-goal').value);
   if (!newCount || newCount < 0) { showToast('⚠️ Compteur invalide.'); return; }
   if (!newGoal  || newGoal  < 1) { showToast('⚠️ Objectif invalide.');  return; }
 
-  // Mettre à jour les compteurs
+  // 1. Mettre à jour la variable globale
   sigCount = newCount;
   adminGoal = newGoal;
   localStorage.setItem('sigCount221', newCount);
   localStorage.setItem('adminGoal', newGoal);
 
-  // Rafraîchir l'affichage
   const fmt = newCount.toLocaleString('fr-FR');
-  document.getElementById('count-display').textContent = fmt;
-  document.getElementById('hero-signataires').textContent = fmt;
-  document.querySelector('.petition-goal').textContent =
-    'signataires · objectif ' + newGoal.toLocaleString('fr-FR');
+
+  // 2. Hero stat
+  const heroEl = document.getElementById('hero-signataires');
+  if (heroEl) heroEl.textContent = fmt;
+
+  // 3. Compteur pétition (animation)
+  const countEl = document.getElementById('count-display');
+  if (countEl) animCount(newCount, countEl);
+
+  // 4. Barre de progression
   updateProgressWithGoal(newCount, newGoal);
+
+  // 5. Label objectif
+  const goalEl = document.querySelector('.petition-goal');
+  if (goalEl) goalEl.textContent = getGoalLabel(newCount);
+
+  // 6. Tag timeline "signatures"
+  document.querySelectorAll('.tl-tag.done-tag').forEach(tag => {
+    if (tag.textContent.includes('signatures')) {
+      tag.textContent = '✓ +' + fmt + ' signatures';
+    }
+  });
+
+  // 7. FAQ Q2 — mention "+X signatures"
+  document.querySelectorAll('.faq-a p').forEach(p => {
+    p.innerHTML = p.innerHTML.replace(/\+[\d\s]+signatures/g, '+' + fmt + ' signatures');
+  });
+
+  // 8. Section "Ce que nous demandons" — phrase d'intro
+  const demandesEl = document.getElementById('demandes-signataires');
+  if (demandesEl) {
+    demandesEl.textContent = fmt + ' citoyens ont signé. La mobilisation est là. Il ne manque qu\'un signal politique pour que le 221 devienne réalité.';
+  }
+
+  // 8. Kaddu bloc hero (si renseigné)
+  const kadduCount = document.getElementById('admin-kaddu').value.trim();
+  const kadduEl = document.getElementById('kaddu-value');
+  if (kadduCount && kadduEl) {
+    kadduEl.innerHTML = '<strong style="color:#fff;font-size:20px">' + parseInt(kadduCount).toLocaleString('fr-FR') + '</strong><br><span style="font-size:10px;color:rgba(255,255,255,0.4)">participants Kaddu</span>';
+  }
 
   toggleAdmin();
   document.getElementById('admin-trigger').style.display = 'flex';
-  showToast('✅ Compteur mis à jour : ' + fmt + ' signatures');
+  showToast('✅ Tous les chiffres mis à jour : ' + fmt + ' signatures');
 }
 
 function updateProgressWithGoal(n, goal) {
-  const pct = Math.min((n / goal) * 100, 100).toFixed(2);
+  const activeGoal = goal || getActiveGoal(n);
+  const pct = Math.min((n / activeGoal) * 100, 100).toFixed(2);
   document.getElementById('progress-fill').style.width = pct + '%';
+  const goalEl = document.querySelector('.petition-goal');
+  if (goalEl) goalEl.textContent = getGoalLabel(n);
 }
 
-// Surcharger updateProgress pour utiliser adminGoal
-function updateProgress(n) { updateProgressWithGoal(n, adminGoal); }
+function updateProgress(n) { updateProgressWithGoal(n, getActiveGoal(n)); }
 </script>
 </body>
 </html>
