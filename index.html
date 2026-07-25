@@ -83,11 +83,11 @@ section { padding: 100px 40px; }
 
 /* PROBLEME */
 .probleme { background: var(--blanc); }
-.numeros-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px; border: 2px solid var(--noir); }
-.numero-card { padding: 40px 32px; border-right: 2px solid var(--noir); position: relative; }
+.numeros-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; margin-top: 60px; border: 2px solid var(--noir); }
+.numero-card { padding: 28px 18px; border-right: 2px solid var(--noir); position: relative; }
 .numero-card:last-child { border-right: none; }
 .numero-card.dead { background: #f5f5f5; }
-.numero-big { font-family: 'Bebas Neue', sans-serif; font-size: 88px; line-height: 1; letter-spacing: 2px; color: var(--noir); margin-bottom: 16px; }
+.numero-big { font-family: 'Bebas Neue', sans-serif; font-size: 40px; line-height: 1.05; letter-spacing: 1px; color: var(--noir); margin-bottom: 16px; min-height: 42px; }
 .numero-card.dead .numero-big { color: #bbb; }
 .numero-name { font-size: 13px; font-weight: 600; color: var(--gris); margin-bottom: 12px; letter-spacing: 0.5px; }
 .numero-issues { list-style: none; }
@@ -189,7 +189,7 @@ section { padding: 100px 40px; }
 .petition-count span { color: var(--or); }
 .petition-goal { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 6px; letter-spacing: 0.5px; }
 .progress-bar { height: 6px; background: rgba(255,255,255,0.15); border-radius: 3px; margin-top: 16px; overflow: hidden; }
-.progress-fill { height: 100%; background: var(--or); border-radius: 3px; width: 98.16%; transition: width 1s ease; }
+.progress-fill { height: 100%; background: var(--or); border-radius: 3px; width: 63.53%; transition: width 1s ease; }
 .form-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 40px; backdrop-filter: blur(8px); }
 .form-card h3 { font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 6px; }
 .form-card p { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
@@ -396,6 +396,10 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 .urg-noyade .urg-actors   { color: #0369a1; }
 .urg-meteo    { background: #f8fafc; color: #1e293b; }
 .urg-meteo .urg-actors    { color: #334155; }
+.urg-enfance  { background: #fdf2f8; color: #831843; }
+.urg-enfance .urg-actors  { color: #9d174d; }
+.urg-cyber    { background: #eef2ff; color: #312e81; }
+.urg-cyber .urg-actors    { color: #4338ca; }
 
 .urgences-cta {
   text-align: center; margin-top: 48px;
@@ -766,7 +770,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
         <div class="stat-lbl">abonnés mobiles</div>
       </div>
       <div class="stat">
-        <div class="stat-num" id="hero-signataires">4 908</div>
+        <div class="stat-num" id="hero-signataires">6 353</div>
         <div class="stat-lbl">citoyens ont signé</div>
       </div>
       <div class="stat">
@@ -817,7 +821,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 <!-- LE PROBLÈME -->
 <section class="probleme" id="probleme">
   <span class="section-label">Le problème</span>
-  <h2 class="section-title">Trois numéros.<br>Aucune coordination.</h2>
+  <h2 class="section-title">Cinq numéros.<br>Aucune coordination.</h2>
   <p class="section-body">Aujourd'hui au Sénégal, en cas d'urgence, vous devez savoir quel numéro appeler, espérer que la ligne réponde, et que les secours se coordonnent seuls. C'est inacceptable.</p>
   <div class="numeros-grid">
     <div class="numero-card dead">
@@ -850,12 +854,32 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
         <li>Conseil AMU de 2005 jamais installé</li>
       </ul>
     </div>
+    <div class="numero-card dead">
+      <div class="numero-big">800 00 20 20</div>
+      <div class="numero-name">GENDARMERIE NATIONALE</div>
+      <ul class="numero-issues">
+        <li>Compétente uniquement en zones rurales</li>
+        <li>Aucune interconnexion avec les autres numéros</li>
+        <li>Dispatch encore radio et manuel</li>
+        <li>Numéro long, peu mémorisable sous le choc</li>
+      </ul>
+    </div>
+    <div class="numero-card dead">
+      <div class="numero-big">116</div>
+      <div class="numero-name">ENFANCE EN DANGER</div>
+      <ul class="numero-issues">
+        <li>Écoute concentrée sur Dakar</li>
+        <li>Aucune interconnexion avec le 17, 18 ou 1515</li>
+        <li>Pas de géolocalisation automatique</li>
+        <li>Danger vital = un appel de plus à composer</li>
+      </ul>
+    </div>
   </div>
   <div style="margin-top:48px; padding:40px; background:var(--vert); border-radius:16px; display:flex; align-items:center; gap:40px; flex-wrap:wrap;">
     <div style="font-family:'Bebas Neue',sans-serif; font-size:80px; color:#fff; flex-shrink:0">221</div>
     <div>
       <p style="font-size:22px; font-weight:700; color:#fff; margin-bottom:12px">La solution : un seul numéro, tous les secours.</p>
-      <p style="font-size:15px; color:rgba(255,255,255,0.7); max-width:500px; line-height:1.6">Police, Gendarmerie, Pompiers, SAMU, Hôpitaux — centralisés dans un Centre National de Réception et de Dispatch, géolocalisé, 24h/24, accessible depuis tout téléphone.</p>
+      <p style="font-size:15px; color:rgba(255,255,255,0.7); max-width:500px; line-height:1.6">Police, Gendarmerie, Pompiers, SAMU, Hôpitaux, protection de l'enfance — centralisés dans un Centre National de Réception et de Dispatch, géolocalisé, 24h/24, accessible depuis tout téléphone.</p>
     </div>
   </div>
   <div class="section-petition-cta">
@@ -914,6 +938,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       <li><span class="feat-icon">🛣</span> Trajet Sécurisé — alerte si je ne reviens pas</li>
       <li><span class="feat-icon">🗺</span> Carte des services d'urgence de Dakar</li>
       <li><span class="feat-icon">🏥</span> Signalement des refus hospitaliers</li>
+      <li><span class="feat-icon">🛡️</span> Cyber-Urgences — arnaques, harcèlement, sextorsion, cyberattaques</li>
       <li><span class="feat-icon">🤝</span> Mode Volontaire 221 — je rejoins le réseau de secouristes</li>
     </ul>
     <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:8px">
@@ -992,6 +1017,18 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       <p>Tempête, foudre, effondrement de bâtiment, séisme</p>
       <div class="urg-actors">Protection Civile · ANACIM · Armées</div>
     </div>
+    <div class="urgence-card urg-enfance">
+      <div class="urg-icon">🛡️</div>
+      <h3>Protection de l'Enfance</h3>
+      <p>Maltraitance, abus, exploitation, enfant en danger</p>
+      <div class="urg-actors">Centre Ginddi · 116 · Police si infraction</div>
+    </div>
+    <div class="urgence-card urg-cyber">
+      <div class="urg-icon">🔐</div>
+      <h3>Cyber-Urgences</h3>
+      <p>Arnaques en ligne, cyberharcèlement, sextorsion, usurpation d'identité, cyberattaques</p>
+      <div class="urg-actors">DSC Police · ENCVR · Gendarmerie</div>
+    </div>
   </div>
 
   <div class="urgences-cta">
@@ -1028,6 +1065,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       <div class="eco-card"><div class="eco-emoji">⚓</div><div class="eco-name">Marine Nationale</div><div class="eco-role">Secours en Mer & Zones Fluviales</div></div>
       <div class="eco-card"><div class="eco-emoji">✝️</div><div class="eco-name">Croix-Rouge Sénégalaise</div><div class="eco-role">Premiers Secours & Aide Humanitaire</div></div>
       <div class="eco-card"><div class="eco-emoji">🛡️</div><div class="eco-name">Protection Civile</div><div class="eco-role">Coordination des Catastrophes Majeures</div></div>
+      <div class="eco-card"><div class="eco-emoji">🧒</div><div class="eco-name">Centre Ginddi</div><div class="eco-role">Protection de l'Enfance · 116</div></div>
     </div>
   </div>
 
@@ -1070,6 +1108,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       <div class="eco-card"><div class="eco-emoji">🌦️</div><div class="eco-name">ANACIM</div><div class="eco-role">Agence Nationale de l'Aviation Civile & Météo</div></div>
       <div class="eco-card"><div class="eco-emoji">🌊</div><div class="eco-name">DGPI</div><div class="eco-role">Direction Gestion & Prévention des Inondations</div></div>
       <div class="eco-card"><div class="eco-emoji">🗺️</div><div class="eco-name">Préfectures & Mairies</div><div class="eco-role">Relais territorial de proximité</div></div>
+      <div class="eco-card"><div class="eco-emoji">🔐</div><div class="eco-name">ENCVR</div><div class="eco-role">École Nat. de Cybersécurité à Vocation Régionale — Cyber-Urgences 221, cyberattaques critiques, rattachée à la Présidence</div></div>
     </div>
   </div>
 
@@ -1283,7 +1322,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 <section class="demandes" id="demandes">
   <span class="section-label">Appel aux décideurs</span>
   <h2 class="section-title">Ce que nous<br>demandons.</h2>
-  <p class="section-body" style="margin-bottom:40px" id="demandes-signataires">4 908 citoyens ont signé. La mobilisation est là. Il ne manque qu'un signal politique pour que le 221 devienne réalité.</p>
+  <p class="section-body" style="margin-bottom:40px" id="demandes-signataires">6 353 citoyens ont signé. La mobilisation est là. Il ne manque qu'un signal politique pour que le 221 devienne réalité.</p>
 
   <!-- Bloc introductif solennel -->
   <div class="demandes-intro">
@@ -1362,7 +1401,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
     <!-- Compteur -->
     <div class="petition-count-wrap" style="margin-bottom:32px">
       <div class="petition-count"><span id="count-display">0</span></div>
-      <div class="petition-goal">signataires · objectif 5 000</div>
+      <div class="petition-goal">signataires · objectif 10 000</div>
       <div class="progress-bar" style="max-width:480px; margin:16px auto 0">
         <div class="progress-fill" id="progress-fill"></div>
       </div>
@@ -1444,9 +1483,9 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       <div class="tl-content">
         <div class="tl-date">2025 — 2026</div>
         <h3 class="tl-title">Conception & dossier technique</h3>
-        <p class="tl-desc">Dossier technique complet (v9), mémoire descriptif rédigé, budget documenté (14,3 Mds FCFA), KPI framework, flows d'urgence, application bêta multilangue déployée. La propriété intellectuelle du projet est en cours de sécurisation par les voies appropriées.</p>
+        <p class="tl-desc">Dossier technique complet (v10.6), mémoire descriptif rédigé, budget documenté (14,3 Mds FCFA), KPI framework, flows d'urgence, application bêta multilangue déployée. La propriété intellectuelle du projet est en cours de sécurisation par les voies appropriées.</p>
         <div class="tl-tags">
-          <span class="tl-tag done-tag">✓ Dossier v9</span>
+          <span class="tl-tag done-tag">✓ Dossier v10.6</span>
           <span class="tl-tag done-tag">✓ App bêta en ligne</span>
           <span class="tl-tag done-tag">✓ Propriété intellectuelle sécurisée</span>
         </div>
@@ -1460,7 +1499,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
         <h3 class="tl-title">Mobilisation citoyenne</h3>
         <p class="tl-desc">Lancement de la pétition Change.org, campagne LinkedIn (3 852 impressions, ~6% d'engagement), démarchage médias, identification de partenaires stratégiques.</p>
         <div class="tl-tags">
-          <span class="tl-tag done-tag">✓ +4 908 signatures</span>
+          <span class="tl-tag done-tag">✓ +6 353 signatures</span>
           <span class="tl-tag done-tag">✓ Score 10/10 Change.org</span>
           <span class="tl-tag done-tag">✓ 402 partages</span>
         </div>
@@ -1477,7 +1516,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
           <span class="tl-tag done-tag">✓ SONATEL · MFA · ARTP</span>
           <span class="tl-tag active-tag">⏳ Audience Min. de l'Intérieur</span>
           <span class="tl-tag active-tag">⏳ Couverture médias nationaux</span>
-          <span class="tl-tag active-tag">⏳ 5 000 signatures</span>
+          <span class="tl-tag active-tag">⏳ 10 000 signatures</span>
         </div>
       </div>
     </div>
@@ -1557,7 +1596,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
         <span class="faq-arrow">+</span>
       </button>
       <div class="faq-a">
-        <p>Le Projet 221 est une initiative citoyenne indépendante dont les premières réflexions remontent à <strong>2015</strong> — bien avant que d'autres plateformes similaires n'émergent au Sénégal. Il est fondé sur un dossier technique complet, un budget documenté et une mobilisation citoyenne réelle (+4 908 signatures). Notre approche est claire : nous ne créons pas une couche supplémentaire, nous proposons un numéro unique qui <strong>unifie et coordonne</strong> les services existants (17, 18, 1515) via un Centre National de Dispatch sous la tutelle du Ministère de l'Intérieur.</p>
+        <p>Le Projet 221 est une initiative citoyenne indépendante dont les premières réflexions remontent à <strong>2015</strong> — bien avant que d'autres plateformes similaires n'émergent au Sénégal. Il est fondé sur un dossier technique complet, un budget documenté et une mobilisation citoyenne réelle (+6 353 signatures). Notre approche est claire : nous ne créons pas une couche supplémentaire, nous proposons un numéro unique qui <strong>unifie et coordonne</strong> les services existants (17, 18, 1515) via un Centre National de Dispatch sous la tutelle du Ministère de l'Intérieur.</p>
       </div>
     </div>
 
@@ -1750,8 +1789,8 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 
 <script>
 // ── Initialisation globale ──
-let sigCount = 4908;
-let adminGoal = 5000;
+let sigCount = 6353;
+let adminGoal = 10000;
 
 // Objectifs progressifs : 5 000 puis 10 000
 function getActiveGoal(n) { return n < 5000 ? 5000 : 10000; }
@@ -1763,7 +1802,7 @@ function getGoalLabel(n) {
 (function() {
   const saved = parseInt(localStorage.getItem('sigCount221') || '0');
   if (saved > sigCount) sigCount = saved;
-  adminGoal = parseInt(localStorage.getItem('adminGoal') || '5000');
+  adminGoal = parseInt(localStorage.getItem('adminGoal') || '10000');
 })();
 
 function animCount(target, el) {
