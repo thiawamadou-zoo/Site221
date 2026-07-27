@@ -400,6 +400,8 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 .urg-enfance .urg-actors  { color: #9d174d; }
 .urg-cyber    { background: #eef2ff; color: #312e81; }
 .urg-cyber .urg-actors    { color: #4338ca; }
+.urg-sang     { background: #fff1f2; color: #881337; }
+.urg-sang .urg-actors     { color: #9f1239; }
 
 .urgences-cta {
   text-align: center; margin-top: 48px;
@@ -939,7 +941,8 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       <li><span class="feat-icon">🗺</span> Carte des services d'urgence de Dakar</li>
       <li><span class="feat-icon">🏥</span> Signalement des refus hospitaliers</li>
       <li><span class="feat-icon">🛡️</span> Cyber-Urgences — arnaques, harcèlement, sextorsion, cyberattaques</li>
-      <li><span class="feat-icon">🤝</span> Mode Volontaire 221 — je rejoins le réseau de secouristes</li>
+      <li><span class="feat-icon">🩸</span> Appel aux Dons de Sang — besoin urgent vérifié par le CNRD-221</li>
+      <li><span class="feat-icon">🤝</span> Mode Volontaire 221 — je rejoins le réseau de secouristes (profil donneur inclus)</li>
     </ul>
     <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:8px">
       <a href="https://thiawamadou-zoo.github.io/Site221-fonctionnalites.html/" class="btn-app" style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2)">
@@ -1029,6 +1032,12 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       <p>Arnaques en ligne, cyberharcèlement, sextorsion, usurpation d'identité, cyberattaques</p>
       <div class="urg-actors">DSC Police · ENCVR · Gendarmerie</div>
     </div>
+    <div class="urgence-card urg-sang">
+      <div class="urg-icon">🩸</div>
+      <h3>Dons de Sang</h3>
+      <p>Besoin urgent et compatible signalé, vérifié avant diffusion aux donneurs</p>
+      <div class="urg-actors">CNTS · Hôpitaux · Volontaires 221</div>
+    </div>
   </div>
 
   <div class="urgences-cta">
@@ -1090,7 +1099,8 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       <div class="eco-card"><div class="eco-emoji">🏥</div><div class="eco-name">Cliniques Privées</div><div class="eco-role">Réseau de soins secondaires agréé 221</div></div>
       <div class="eco-card"><div class="eco-emoji">💊</div><div class="eco-name">Pharmacies de Garde</div><div class="eco-role">Réseau 24h/24 géolocalisé sur l'app 221</div></div>
       <div class="eco-card"><div class="eco-emoji">🚑</div><div class="eco-name">SUMA Assistance</div><div class="eco-role">Réseau ambulancier privé — Dakar & régions</div></div>
-      <div class="eco-card"><div class="eco-emoji">🩺</div><div class="eco-name">Volontaires 221</div><div class="eco-role">Réseau citoyen de premiers secours certifiés PSC1</div></div>
+      <div class="eco-card"><div class="eco-emoji">🩸</div><div class="eco-name">CNTS</div><div class="eco-role">Centre National de Transfusion Sanguine — Appels aux dons vérifiés</div></div>
+      <div class="eco-card"><div class="eco-emoji">🩺</div><div class="eco-name">Volontaires 221</div><div class="eco-role">Réseau citoyen de premiers secours certifiés PSC1 — profil donneur de sang inclus</div></div>
     </div>
   </div>
 
@@ -1511,10 +1521,10 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       <div class="tl-content">
         <div class="tl-date">En cours — 2026</div>
         <h3 class="tl-title">Lobbying institutionnel & médias</h3>
-        <p class="tl-desc">Contacts initiés avec plusieurs institutions clés : SONATEL, Ministère des Forces Armées et l'ARTP. Démarchage en cours auprès d'autres institutions, bailleurs et de certains médias comme TFM, RFM, Walf TV, DTV. Objectif : audience officielle et couverture médiatique nationale.</p>
+        <p class="tl-desc">Contacts initiés avec plusieurs institutions clés : SONATEL, Ministère des Forces Armées et l'ARTP. Démarchage en cours auprès d'autres institutions, bailleurs et de certains médias comme TFM, RFM, Walf TV, DTV. Audience confirmée au cabinet du Ministre des Télécommunications et du Numérique le 28 juillet 2026.</p>
         <div class="tl-tags">
           <span class="tl-tag done-tag">✓ SONATEL · MFA · ARTP</span>
-          <span class="tl-tag active-tag">⏳ Audience Min. de l'Intérieur</span>
+          <span class="tl-tag done-tag">✓ Audience Min. Télécoms — 28 juillet 2026</span>
           <span class="tl-tag active-tag">⏳ Couverture médias nationaux</span>
           <span class="tl-tag active-tag">⏳ 10 000 signatures</span>
         </div>
@@ -1587,16 +1597,6 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       </button>
       <div class="faq-a">
         <p>C'est précisément pour ça que nous l'avons choisi. Le 221, c'est l'identité du Sénégal — tout le monde le connaît, même sous le choc. En cas d'urgence, le cerveau humain a besoin d'un repère simple et mémorable. Par ailleurs, techniquement, l'ARTP peut ouvrir un numéro court de 3 chiffres indépendamment de l'indicatif international. Le 112 en Europe fonctionne de la même manière dans des dizaines de pays. Il ne devrait pas y avoir de conflit technique. Nous travaillerons avec l'ARTP pour mettre tout cela en place.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span>Quelle est la différence avec SenAlerte ?</span>
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a">
-        <p>Le Projet 221 est une initiative citoyenne indépendante dont les premières réflexions remontent à <strong>2015</strong> — bien avant que d'autres plateformes similaires n'émergent au Sénégal. Il est fondé sur un dossier technique complet, un budget documenté et une mobilisation citoyenne réelle (+6 353 signatures). Notre approche est claire : nous ne créons pas une couche supplémentaire, nous proposons un numéro unique qui <strong>unifie et coordonne</strong> les services existants (17, 18, 1515) via un Centre National de Dispatch sous la tutelle du Ministère de l'Intérieur.</p>
       </div>
     </div>
 
@@ -1677,7 +1677,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       <div class="apropos-bio">
         <p>Ingénieur en réseaux & systèmes et data analyst, je travaille à <strong>SONATEL SA</strong> depuis plus de 10 ans, où j'occupe le poste de <strong>Chef du Service Pilotage de la Performance</strong> à la Direction de l'Expérience Client. Mon quotidien : gouvernance de la performance, analyse des données, amélioration continue.</p>
         <p style="margin-top:12px">Ancien boy-scout, j'ai toujours eu à cœur de servir. C'est dans cet esprit que je porte le Projet 221 — à titre entièrement bénévole, en dehors de mes responsabilités professionnelles — avec la conviction que les compétences techniques ont une responsabilité citoyenne.</p>
-        <p style="margin-top:12px">Un dossier solide, une application déjà déployée, une pétition qui progresse. Il ne manque qu'une décision politique.</p>
+        <p style="margin-top:12px">Un dossier solide, une application déjà déployée, une pétition qui progresse, des institutions déjà à la table — SONATEL, l'ARTP, le Ministère des Forces Armées, et une audience confirmée avec le Ministère des Télécommunications et du Numérique. Le mouvement est lancé.</p>
       </div>
 
       <div class="apropos-badges">
@@ -1776,7 +1776,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
     <div style="margin-top:20px;padding:12px;background:rgba(255,255,255,0.04);border-radius:8px;font-size:11px;color:rgba(255,255,255,0.35);line-height:1.6">
       Champs mis à jour :<br>
       · Hero · Compteur pétition · Barre de progression<br>
-      · Tag timeline · FAQ Q2 · "Ce que nous demandons"<br>
+      · Tag timeline · "Ce que nous demandons"<br>
       · Bloc Kaddu
     </div>
 
@@ -1995,12 +1995,7 @@ function applyAdmin() {
     }
   });
 
-  // 7. FAQ Q2 — mention "+X signatures"
-  document.querySelectorAll('.faq-a p').forEach(p => {
-    p.innerHTML = p.innerHTML.replace(/\+[\d\s]+signatures/g, '+' + fmt + ' signatures');
-  });
-
-  // 8. Section "Ce que nous demandons" — phrase d'intro
+  // 7. Section "Ce que nous demandons" — phrase d'intro
   const demandesEl = document.getElementById('demandes-signataires');
   if (demandesEl) {
     demandesEl.textContent = fmt + ' citoyens ont signé. La mobilisation est là. Il ne manque qu\'un signal politique pour que le 221 devienne réalité.';
