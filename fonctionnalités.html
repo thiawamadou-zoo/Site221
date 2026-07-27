@@ -122,8 +122,12 @@ nav {
 .f5 .feat-tag { background: #fef3c7; color: #92400e; }
 .f6 .feat-emoji { background: #ffe4e6; }
 .f6 .feat-tag { background: #ffe4e6; color: #9f1239; }
-.f7 .feat-emoji { background: #e0f2fe; }
-.f7 .feat-tag { background: #e0f2fe; color: #0c4a6e; }
+.f7 .feat-emoji { background: #e0e7ff; }
+.f7 .feat-tag { background: #e0e7ff; color: #3730a3; }
+.f8 .feat-emoji { background: #ffe4e6; }
+.f8 .feat-tag { background: #ffe4e6; color: #9f1239; }
+.f9 .feat-emoji { background: #e0f2fe; }
+.f9 .feat-tag { background: #e0f2fe; color: #0c4a6e; }
 
 /* CARTE VOLONTAIRE — pleine largeur */
 .feat-card.full-width { grid-column: 1 / -1; }
@@ -176,15 +180,15 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">221 🇸🇳</a>
-  <a href="index.html" class="nav-back">← Retour au site</a>
+  <a href="https://www.projet221.com/" class="nav-logo">221 🇸🇳</a>
+  <a href="https://www.projet221.com/" class="nav-back">← Retour au site</a>
   <a href="https://thiawamadou-zoo.github.io/221/" target="_blank" class="nav-app">Tester l'app →</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <span class="hero-label">Application mobile · Projet 221</span>
-  <h1>7 fonctionnalités.<br>Une seule mission.</h1>
+  <h1>9 fonctionnalités.<br>Une seule mission.</h1>
   <p>L'application 221 est conçue pour que chaque Sénégalais puisse agir en situation d'urgence — qu'il soit victime, témoin ou secouriste volontaire.</p>
   <div class="hero-badges">
     <span class="badge badge-green">✓ Bêta disponible</span>
@@ -323,12 +327,52 @@ footer {
       <span class="feat-tag">Disponible en bêta</span>
     </div>
 
-    <!-- 7. Mode Volontaire — pleine largeur -->
-    <div class="feat-card f7 full-width">
+    <!-- 7. Cyber-Urgences -->
+    <div class="feat-card f7">
+      <div class="feat-card-header">
+        <div class="feat-emoji">🔐</div>
+        <div class="feat-title-block">
+          <span class="feat-num">07 · Cybersécurité</span>
+          <h3 class="feat-title">Cyber-Urgences</h3>
+        </div>
+      </div>
+      <p class="feat-desc">Extension numérique du CNRD-221, développée en partenariat avec l'ENCVR (École Nationale de Cybersécurité à Vocation Régionale). Documentez la menace : l'application oriente vers l'unité compétente — DSC Police, Gendarmerie, ENCVR ou Parquet selon les cas.</p>
+      <ul class="feat-details">
+        <li>6 catégories couvertes : arnaques en ligne, cyberharcèlement, cyberviolences (sextorsion), usurpation d'identité, cyberattaques critiques, escroqueries téléphoniques</li>
+        <li>Formulaire guidé : plateforme concernée, préjudice subi, identité de l'auteur si connue, preuves à joindre</li>
+        <li>Mode « Cas urgent » (sextorsion active, menace physique) déclenchant une intervention en temps réel, comme un SOS classique</li>
+        <li>Cas standard : dossier documenté avec numéro de suivi et rappel automatique sous 48h</li>
+        <li>Passerelle directe vers le 116 (Centre Ginddi) si un enfant est concerné</li>
+      </ul>
+      <span class="feat-tag">Disponible en bêta</span>
+    </div>
+
+    <!-- 8. Dons de Sang -->
+    <div class="feat-card f8">
+      <div class="feat-card-header">
+        <div class="feat-emoji">🩸</div>
+        <div class="feat-title-block">
+          <span class="feat-num">08 · Solidarité</span>
+          <h3 class="feat-title">Appel aux Dons de Sang</h3>
+        </div>
+      </div>
+      <p class="feat-desc">Un besoin urgent et compatible peut sauver une vie en quelques heures. Toute demande est vérifiée par un opérateur CNRD-221 avant d'être diffusée aux donneurs compatibles à proximité — aucune diffusion automatique.</p>
+      <ul class="feat-details">
+        <li>Consultation des demandes actives à proximité (groupe recherché, établissement, urgence)</li>
+        <li>Formulaire de signalement : établissement, groupe sanguin, quantité de poches, contact sur place</li>
+        <li>Vérification humaine par le CNRD-221 avant toute diffusion aux donneurs</li>
+        <li>Diffusion géolocalisée aux Volontaires 221 ayant activé leur profil donneur compatible</li>
+        <li>Passerelle directe vers le profil donneur du Mode Volontaire 221</li>
+      </ul>
+      <span class="feat-tag">Disponible en bêta</span>
+    </div>
+
+    <!-- 9. Mode Volontaire — pleine largeur -->
+    <div class="feat-card f9 full-width">
       <div class="feat-card-header">
         <div class="feat-emoji">🤝</div>
         <div class="feat-title-block">
-          <span class="feat-num">07 · Communauté · Fonctionnalité phare</span>
+          <span class="feat-num">09 · Communauté · Fonctionnalité phare</span>
           <h3 class="feat-title">Mode Volontaire 221 — Rejoindre le réseau de secouristes</h3>
         </div>
       </div>
@@ -344,6 +388,7 @@ footer {
         <li>Système de notation et de validation des interventions pour garantir la qualité</li>
         <li>Accès à un programme de formation continue et certification Volontaire 221</li>
         <li>Tableau de bord personnel : interventions, impact, badges de reconnaissance communautaire</li>
+        <li>Profil donneur de sang intégré (facultatif) : groupe sanguin, date du dernier don, consentement pour être alerté en cas de besoin compatible à proximité</li>
       </ul>
       <span class="feat-tag" style="margin-top:28px">En cours de déploiement</span>
     </div>
@@ -359,7 +404,7 @@ footer {
     <a href="https://thiawamadou-zoo.github.io/221/" target="_blank" class="btn-primary">
       🆘 Tester l'application →
     </a>
-    <a href="index.html#petition" class="btn-secondary">
+    <a href="https://www.projet221.com/#petition" class="btn-secondary">
       ✊ Signer la pétition
     </a>
   </div>
