@@ -556,6 +556,8 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 }
 .tl-item.done .tl-dot   { background: var(--vert); color: #fff; }
 .tl-item.active .tl-dot { background: var(--rouge); color: #fff; box-shadow: 0 0 0 6px rgba(204,0,0,0.12); animation: sosPulse 2s infinite; }
+.tl-item.progress .tl-dot { background: #f97316; color: #fff; box-shadow: 0 0 0 6px rgba(249,115,22,0.15); }
+.tl-item.progress .tl-date { color: #ea580c; }
 .tl-item.pending .tl-dot{ background: var(--gris-clair); color: var(--gris); }
 
 .tl-content { flex: 1; padding-top: 8px; }
@@ -569,6 +571,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
 .done-tag    { background: #dcfce7; color: #166534; }
 .active-tag  { background: #fee2e2; color: #991b1b; }
 .pending-tag { background: var(--gris-clair); color: var(--gris); }
+.progress-tag { background: #ffedd5; color: #9a3412; }
 
 /* ══════════════════════════════════════════
    FAQ
@@ -1493,10 +1496,10 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
       <div class="tl-content">
         <div class="tl-date">2025 — 2026</div>
         <h3 class="tl-title">Conception & dossier technique</h3>
-        <p class="tl-desc">Dossier technique complet (v10.6), mémoire descriptif rédigé, première estimation budgétaire (14,3 Mds FCFA, à affiner en Phase 0 — cadrage), KPI framework, flows d'urgence, application bêta multilangue déployée. La propriété intellectuelle du projet est sécurisée par les voies appropriées.</p>
+        <p class="tl-desc">Dossier technique complet (v10.8), mémoire descriptif rédigé, première estimation budgétaire (14,3 Mds FCFA, à affiner en Phase 0 — cadrage), KPI framework, flows d'urgence, application bêta (v5) déployée en français, wolof et anglais. La propriété intellectuelle du projet est sécurisée par les voies appropriées.</p>
         <div class="tl-tags">
-          <span class="tl-tag done-tag">✓ Dossier v10.6</span>
-          <span class="tl-tag done-tag">✓ App bêta en ligne</span>
+          <span class="tl-tag done-tag">✓ Dossier v10.8</span>
+          <span class="tl-tag done-tag">✓ App bêta v5 · FR / WO / EN</span>
           <span class="tl-tag done-tag">✓ Propriété intellectuelle sécurisée</span>
         </div>
       </div>
@@ -1505,9 +1508,9 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
     <div class="tl-item done">
       <div class="tl-dot"><span>✓</span></div>
       <div class="tl-content">
-        <div class="tl-date">Juin — Juillet 2026</div>
+        <div class="tl-date">Juin — Novembre 2026</div>
         <h3 class="tl-title">Mobilisation citoyenne</h3>
-        <p class="tl-desc">Lancement de la pétition Change.org, campagne LinkedIn (3 852 impressions, ~6% d'engagement), démarchage médias, identification de partenaires stratégiques.</p>
+        <p class="tl-desc">Lancement de la pétition Change.org, campagnes sur LinkedIn, X, Facebook, WhatsApp et TikTok, vidéos de présentation en français et en wolof, identification de partenaires stratégiques.</p>
         <div class="tl-tags">
           <span class="tl-tag done-tag">✓ +6 951 signatures</span>
           <span class="tl-tag done-tag">✓ Score 10/10 Change.org</span>
@@ -1519,12 +1522,12 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
     <div class="tl-item active">
       <div class="tl-dot"><span>→</span></div>
       <div class="tl-content">
-        <div class="tl-date">En cours — 2026</div>
+        <div class="tl-date">En cours — depuis l'été 2026</div>
         <h3 class="tl-title">Lobbying institutionnel & médias</h3>
-        <p class="tl-desc">Contacts initiés avec plusieurs institutions clés. Démarchage en cours auprès de bailleurs et de médias nationaux.</p>
+        <p class="tl-desc">Contacts et courriers adressés à plusieurs institutions clés. La couverture médiatique a démarré (presse nationale, novembre 2026) ; le démarchage se poursuit auprès de bailleurs et d'autres médias nationaux.</p>
         <div class="tl-tags">
           <span class="tl-tag done-tag">✓ Contacts institutionnels initiés</span>
-          <span class="tl-tag active-tag">⏳ Couverture médias nationaux</span>
+          <span class="tl-tag progress-tag">⏳ Couverture médiatique : démarrée</span>
           <span class="tl-tag active-tag">⏳ 10 000 signatures</span>
         </div>
       </div>
@@ -1533,7 +1536,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
     <div class="tl-item pending">
       <div class="tl-dot"><span>4</span></div>
       <div class="tl-content">
-        <div class="tl-date">2026 — T3/T4</div>
+        <div class="tl-date">2027 — T1/T2</div>
         <h3 class="tl-title">Validation politique & Comité Interministériel</h3>
         <p class="tl-desc">Validation officielle du 221 par le Président de la République. Constitution du Comité Interministériel (Intérieur, Santé, Télécoms, Finances). Engagement des bailleurs internationaux.</p>
         <div class="tl-tags">
@@ -1548,7 +1551,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
     <div class="tl-item pending">
       <div class="tl-dot"><span>5</span></div>
       <div class="tl-content">
-        <div class="tl-date">2027 — 6 mois</div>
+        <div class="tl-date">2027 — S2 (6 mois)</div>
         <h3 class="tl-title">Phase 1 — Dakar & grandes villes</h3>
         <p class="tl-desc">Déploiement du CNRD-221 à Dakar, Thiès et Saint-Louis. Centre de dispatch opérationnel avec redondance. Intégration des 4 corps d'urgence. Formation des opérateurs.</p>
         <div class="tl-tags">
@@ -1562,7 +1565,7 @@ footer { background: var(--noir); padding: 48px 40px; display: flex; justify-con
     <div class="tl-item pending">
       <div class="tl-dot"><span>6</span></div>
       <div class="tl-content">
-        <div class="tl-date">2027 — 2028</div>
+        <div class="tl-date">2028 — 2029</div>
         <h3 class="tl-title">Couverture nationale — 14 régions</h3>
         <p class="tl-desc">Extension progressive aux 14 régions du Sénégal. Intégration du réseau de Volontaires 221. Application mobile en 5 langues. Objectif : zéro zone non couverte.</p>
         <div class="tl-tags">
